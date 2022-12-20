@@ -1,0 +1,12 @@
+xcuserstate/
+xcuserdata/
+Pods
+Podfile.lock
+Build
+*.xcbkptlist
+.idea/
+.DS_Store
+DerivedData/
+Payload/
+*.ipa
+*/xcuserdata/*
