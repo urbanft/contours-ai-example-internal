@@ -29,5 +29,9 @@ class ViewController: UIViewController, CheckCaptureDelegate {
             //Your code goes here
         }
     }
+    
+    func eventCaptured(data: [String : Any]?) {
+        print(data)
+    }
 }
 

@@ -34,6 +34,10 @@ class MainActivity : AppCompatActivity() {
                     showCapturedImage(<IMAGE_URI>)
                 }
             }
+
+            override fun onEventCapture(eventJsonString: String) {
+                  print(eventJsonString)
+            }
         })
     }
 
