@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QmJ-Mi-VnQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QmJ-Mi-VnQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,7 +13,7 @@
             <objects>
                 <navigationController id="QmJ-Mi-VnQ" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hQI-bA-pES">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -27,7 +27,7 @@
         <!--View Controller-->
         <scene sceneID="hqo-4I-Osu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="uJG-8w-xhg" customClass="ViewController" customModule="ContoursAIPOD" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="uJG-8w-xhg" customClass="ViewController" customModule="ContoursAIExampleiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X8x-Dt-6Re">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,9 +85,6 @@
                                 <state key="normal" title="Download">
                                     <color key="titleColor" systemColor="systemBlueColor"/>
                                 </state>
-                                <connections>
-                                    <action selector="downloadImage:" destination="uJG-8w-xhg" eventType="touchUpInside" id="LbM-2C-fUo"/>
-                                </connections>
                             </button>
                             <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6k-hU-nuR">
                                 <rect key="frame" x="172.5" y="697" width="69" height="30"/>
@@ -95,9 +92,6 @@
                                     <constraint firstAttribute="height" constant="30" id="SUq-Ik-szl"/>
                                 </constraints>
                                 <state key="normal" title="Download"/>
-                                <connections>
-                                    <action selector="downloadImage:" destination="uJG-8w-xhg" eventType="touchUpInside" id="Fx5-mZ-bik"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FP1-Wr-yzI"/>
@@ -115,10 +109,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="41m-II-Q22"/>
                     <connections>
-                        <outlet property="backDownloadbutton" destination="P6k-hU-nuR" id="c5z-rr-0jH"/>
                         <outlet property="backImageView" destination="KQO-ef-m2D" id="pKq-cW-sU7"/>
                         <outlet property="backImagebutton" destination="0d8-JU-0wC" id="Fgz-vF-8wl"/>
-                        <outlet property="frontDownloadbutton" destination="fRG-XN-kgS" id="GIR-Zo-FLm"/>
                         <outlet property="frontImageView" destination="AOK-7x-wU8" id="632-85-bdD"/>
                         <outlet property="frontImagebutton" destination="5gp-aG-LAV" id="2hz-Ml-26W"/>
                     </connections>
