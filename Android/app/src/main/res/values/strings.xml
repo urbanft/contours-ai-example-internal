@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ContoursAIExampleAndroid</string>
+    <string name="front_check">Front check</string>
+    <string name="back_check">Rear check</string>
 </resources>
