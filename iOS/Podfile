@@ -7,6 +7,6 @@ target 'ContoursAIExampleiOS' do
 
   # Pods for ContoursAIExampleiOS
 
-pod 'OpenCV2_iOS'
+pod 'ContoursAISDK'
 
 end
