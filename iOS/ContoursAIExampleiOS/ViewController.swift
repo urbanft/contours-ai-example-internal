@@ -43,12 +43,12 @@ class ViewController: UIViewController,CheckCaptureDelegate{
     }
     
     func openFrontOfCheck(){
-        let imageVC = contoursSDK.initializeSDK(checkCapturingSide:.front ,clientId: "<YOUR CLIENT ID>", captureType: CaptureType.both.rawValue, delegate: self)
+        let imageVC = contoursSDK.initializeSDK(checkCapturingSide:.front ,clientId: "<YOUR CLIENT ID>", captureType: CaptureType.both.rawValue,  enableMultipleCheckCapturing: false ,delegate: self)
         self.navigationController?.pushViewController(imageVC, animated: false)
     }
     
     func openRearOfCheck() {
-        let imageVC = contoursSDK.initializeSDK(checkCapturingSide: .back, clientId: "<YOUR CLIENT ID>", captureType: CaptureType.both.rawValue, delegate: self)
+        let imageVC = contoursSDK.initializeSDK(checkCapturingSide: .back, clientId: "<YOUR CLIENT ID>", captureType: CaptureType.both.rawValue, enableMultipleCheckCapturing: false, delegate: self)
         self.navigationController?.pushViewController(imageVC, animated: false)
     }
     
