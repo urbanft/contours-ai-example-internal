@@ -61,6 +61,7 @@ class MainActivity : AppCompatActivity() {
         contoursModel.capturingMode = ContoursCapturingMode.BOTH_CAPTURE
         contoursModel.checkFace = checkFace
         contoursModel.fontFamily = "Poppins"
+        contoursModel.enableMultipleCheckCapturing = false
         ContoursStarterActivity.launchSdk(this, contoursModel, clientId, object:
             IContoursResultListener {
             override fun onCaptureSuccess(contoursResultModel: ContoursResultModel) {
