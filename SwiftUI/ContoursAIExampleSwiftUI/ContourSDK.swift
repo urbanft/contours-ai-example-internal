@@ -25,7 +25,7 @@ struct ContoursSDK: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UIViewController {
         AppDelegate.orientationLock = .landscapeRight
         let contourSDK = ContoursAIFramework()
-        return contourSDK.initializeSDK(checkCapturingSide: captureSide ?? .front, clientId: "<YOUR CLIENT ID>", captureType: CaptureType.both.rawValue, delegate: ContourCallback(self))
+        return contourSDK.initializeSDK(checkCapturingSide: captureSide ?? .front, clientId: "<YOUR CLIENT ID>", captureType: CaptureType.both.rawValue, enableMultipleCheckCapturing: false, delegate: ContourCallback(self))
     }
     
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
