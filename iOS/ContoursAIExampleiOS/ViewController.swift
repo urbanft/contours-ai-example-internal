@@ -30,6 +30,7 @@ class ViewController: UIViewController,CheckCaptureDelegate{
     
     func openContoursSDKConcept(checkSide:Int) {
         appDelegate?.isLandscape = true
+        UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
             self.view.layoutSubviews()
             switch checkSide {
@@ -60,10 +61,12 @@ class ViewController: UIViewController,CheckCaptureDelegate{
             backImageView.image = rearImageCropped
         }
         appDelegate?.isLandscape = false
+        UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
     }
     
     func onContourClose() {
         appDelegate?.isLandscape = false
+        UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
     }
     
     func eventCaptured(data: [String : Any]?) {

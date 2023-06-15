@@ -24,6 +24,7 @@ struct ContoursSDK: UIViewControllerRepresentable {
      */
     func makeUIViewController(context: Context) -> UIViewController {
         AppDelegate.orientationLock = .landscapeRight
+        UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
         let contourSDK = ContoursAIFramework()
         return contourSDK.initializeSDK(checkCapturingSide: captureSide ?? .front, clientId: "<YOUR CLIENT ID>", captureType: CaptureType.both.rawValue, enableMultipleCheckCapturing: false, delegate: ContourCallback(self))
     }
@@ -40,6 +41,7 @@ struct ContoursSDK: UIViewControllerRepresentable {
         //Get callback when Contour SDK is close
         func onContourClose() {
             AppDelegate.orientationLock = .portrait
+            UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
         }
         
         /* Get callback when check is captured.
@@ -55,6 +57,8 @@ struct ContoursSDK: UIViewControllerRepresentable {
             if let uiImage = rearImage {
                 parent.rearImage = uiImage
             }
+            AppDelegate.orientationLock = .portrait
+            UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
         }
     }
 }
