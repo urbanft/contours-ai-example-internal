@@ -29,8 +29,6 @@ class ViewController: UIViewController,CheckCaptureDelegate{
     }
     
     func openContoursSDKConcept(checkSide:Int) {
-        appDelegate?.isLandscape = true
-        UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
             self.view.layoutSubviews()
             switch checkSide {
@@ -45,12 +43,16 @@ class ViewController: UIViewController,CheckCaptureDelegate{
     
     func openFrontOfCheck(){
         let imageVC = contoursSDK.initializeSDK(checkCapturingSide:.front ,clientId: "<YOUR CLIENT ID>", captureType: CaptureType.both.rawValue,  enableMultipleCheckCapturing: false ,delegate: self)
-        self.navigationController?.pushViewController(imageVC, animated: false)
+        let navigationController = UINavigationController(rootViewController: imageVC)
+        navigationController.modalPresentationStyle = .fullScreen
+        self.present(navigationController, animated: false)
     }
     
     func openRearOfCheck() {
         let imageVC = contoursSDK.initializeSDK(checkCapturingSide: .back, clientId: "<YOUR CLIENT ID>", captureType: CaptureType.both.rawValue, enableMultipleCheckCapturing: false, delegate: self)
-        self.navigationController?.pushViewController(imageVC, animated: false)
+        let navigationController = UINavigationController(rootViewController: imageVC)
+        navigationController.modalPresentationStyle = .fullScreen
+        self.present(navigationController, animated: false)
     }
     
     func imageCaptured(frontImageCropped: UIImage?, rearImageCropped: UIImage?, frontImage: UIImage?, rearImage: UIImage?) {
@@ -60,13 +62,9 @@ class ViewController: UIViewController,CheckCaptureDelegate{
         if rearImage != nil {
             backImageView.image = rearImageCropped
         }
-        appDelegate?.isLandscape = false
-        UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
     }
     
     func onContourClose() {
-        appDelegate?.isLandscape = false
-        UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
     }
     
     func eventCaptured(data: [String : Any]?) {
