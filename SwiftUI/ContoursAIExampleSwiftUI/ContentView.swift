@@ -2,49 +2,50 @@ import SwiftUI
 import UIKit
 import ContoursAI_SDK
 
+class ViewModel: ObservableObject {
+    @Published var captureSide:CaptureSide = .front
+}
 struct ContentView: View {
-    @State var selection: String?
-    @State private var orientation = UIDevice.current.orientation
     @State  var frontImage:UIImage?
     @State  var rearImage:UIImage?
-    @State  var fromtImageObj:Image?
-    @State  var rearImageObj:Image?
+    @State private var isPresentingVC = false
+    @State private var isPresentingRearVC = false
+    var viewModel: ViewModel = ViewModel()
+    
+    @State var shouldPresent: Bool = false
     var body: some View {
-        NavigationView {
-            VStack(spacing: 10.0) {
-                Text("Front Image")
-                NavigationLink(destination: ContoursSDK(captureSide: .front, frontImage: $frontImage, rearImage: $rearImage).ignoresSafeArea(.all)) {
-                    fromtImageObj?
-                        .resizable()
-                        .background(Color.gray)
-                        .aspectRatio(nil, contentMode: .fit)
-                }.onAppear(){
-                    loadimage()
+        VStack {
+            Text("Front Image")
+            Image(uiImage: frontImage ?? UIImage())
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .padding()
+                .background(Color.gray)
+                .onTapGesture {
+                    ContoursAIFramework.shared.isLandscape = true
+                    viewModel.captureSide  = .front
+                    shouldPresent = true
                 }
-                Text("Rear Image ")
-                NavigationLink(destination: ContoursSDK(captureSide: .back, frontImage: $frontImage, rearImage: $rearImage).ignoresSafeArea(.all)) {
-                    rearImageObj?
-                        .resizable()
-                        .background(Color.gray)
-                        .aspectRatio(nil, contentMode: .fit)
-                }.onAppear(){
-                    loadimage()
+            Text("Rear Image")
+            Image(uiImage: rearImage ?? UIImage())
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .padding()
+                .background(Color.gray)
+                .onTapGesture {
+                    ContoursAIFramework.shared.isLandscape = true
+                    viewModel.captureSide = .back
+                    shouldPresent = true
                 }
-            }
-        }.edgesIgnoringSafeArea(.all)
-            .navigationViewStyle(StackNavigationViewStyle())
-        
-    }
-    func loadimage() {
-        rearImageObj = Image(uiImage: rearImage ?? UIImage())
-        fromtImageObj = Image(uiImage: frontImage ?? UIImage())
+        }
+        .fullScreenCover(isPresented: $shouldPresent) {
+            ContoursSDK(captureSide:  viewModel.captureSide , frontImage: $frontImage, rearImage: $rearImage).ignoresSafeArea(.all)
+        }
     }
 }
 
-
-struct ContentView_Previews: PreviewProvider {
+struct Present_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
-

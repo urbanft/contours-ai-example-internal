@@ -29,6 +29,7 @@ class ViewController: UIViewController,CheckCaptureDelegate{
     }
     
     func openContoursSDKConcept(checkSide:Int) {
+        ContoursAIFramework.shared.isLandscape = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
             self.view.layoutSubviews()
             switch checkSide {
@@ -56,6 +57,7 @@ class ViewController: UIViewController,CheckCaptureDelegate{
     }
     
     func imageCaptured(frontImageCropped: UIImage?, rearImageCropped: UIImage?, frontImage: UIImage?, rearImage: UIImage?) {
+        ContoursAIFramework.shared.isLandscape = false
         if frontImage != nil {
             frontImageView.image = frontImageCropped
         }
@@ -65,6 +67,7 @@ class ViewController: UIViewController,CheckCaptureDelegate{
     }
     
     func onContourClose() {
+        ContoursAIFramework.shared.isLandscape = false
     }
     
     func eventCaptured(data: [String : Any]?) {

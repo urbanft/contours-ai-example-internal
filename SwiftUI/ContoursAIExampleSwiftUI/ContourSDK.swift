@@ -23,10 +23,11 @@ struct ContoursSDK: UIViewControllerRepresentable {
      * Param delegate - You Need to confirm delegate to get callback from Contour SDK
      */
     func makeUIViewController(context: Context) -> UIViewController {
-        AppDelegate.orientationLock = .landscapeRight
-        UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
-        let contourSDK = ContoursAIFramework()
-        return contourSDK.initializeSDK(checkCapturingSide: captureSide ?? .front, clientId: "<YOUR CLIENT ID>", captureType: CaptureType.both.rawValue, enableMultipleCheckCapturing: false, delegate: ContourCallback(self))
+        ContoursAIFramework.shared.isLandscape = true
+        let contourSDK = ContoursAIFramework().initializeSDK(checkCapturingSide: captureSide ?? .front, clientId: "<YOUR CLIENT ID>", captureType: CaptureType.both.rawValue, enableMultipleCheckCapturing: false, delegate: ContourCallback(self))
+        let navVC = UINavigationController(rootViewController: contourSDK)
+        navVC.modalPresentationStyle = .fullScreen
+        return navVC
     }
     
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
@@ -40,8 +41,7 @@ struct ContoursSDK: UIViewControllerRepresentable {
         
         //Get callback when Contour SDK is close
         func onContourClose() {
-            AppDelegate.orientationLock = .portrait
-            UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+            ContoursAIFramework.shared.isLandscape = false
         }
         
         /* Get callback when check is captured.
@@ -51,14 +51,13 @@ struct ContoursSDK: UIViewControllerRepresentable {
          * Param rearImage - Original rear check image
          */
         func imageCaptured(frontImageCropped: UIImage?, rearImageCropped: UIImage?, frontImage: UIImage?, rearImage: UIImage?) {
+            ContoursAIFramework.shared.isLandscape = false
             if let uiImage = frontImage {
                 parent.frontImage = uiImage
             }
             if let uiImage = rearImage {
                 parent.rearImage = uiImage
             }
-            AppDelegate.orientationLock = .portrait
-            UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
         }
     }
 }
