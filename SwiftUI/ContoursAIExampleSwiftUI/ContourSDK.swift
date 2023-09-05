@@ -12,7 +12,7 @@ import ContoursAI_SDK
 struct ContoursSDK: UIViewControllerRepresentable {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    var captureSide: CaptureSide? = .front
+    var captureSide = DocumentSide.front.rawValue
     @Binding  var frontImage: UIImage?
     @Binding  var rearImage: UIImage?
     
@@ -24,7 +24,7 @@ struct ContoursSDK: UIViewControllerRepresentable {
      */
     func makeUIViewController(context: Context) -> UIViewController {
         ContoursAIFramework.shared.isLandscape = true
-        let contourSDK = ContoursAIFramework().initializeSDK(checkCapturingSide: captureSide ?? .front, clientId: "<YOUR CLIENT ID>", captureType: CaptureType.both.rawValue, enableMultipleCheckCapturing: false, delegate: ContourCallback(self))
+        let contourSDK = ContoursAIFramework().initializeSDK(checkCapturingSide: captureSide , clientId: "<YOUR CLIENT ID>", captureType: CaptureType.both.rawValue, enableMultipleCheckCapturing: false, delegate: ContourCallback(self))
         let navVC = UINavigationController(rootViewController: contourSDK)
         navVC.modalPresentationStyle = .fullScreen
         return navVC

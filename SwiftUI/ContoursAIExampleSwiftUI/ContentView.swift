@@ -3,7 +3,7 @@ import UIKit
 import ContoursAI_SDK
 
 class ViewModel: ObservableObject {
-    @Published var captureSide:CaptureSide = .front
+    @Published var captureSide = DocumentSide.front.rawValue
 }
 struct ContentView: View {
     @State  var frontImage:UIImage?
@@ -23,7 +23,7 @@ struct ContentView: View {
                 .background(Color.gray)
                 .onTapGesture {
                     ContoursAIFramework.shared.isLandscape = true
-                    viewModel.captureSide  = .front
+                    viewModel.captureSide  = DocumentSide.front.rawValue
                     shouldPresent = true
                 }
             Text("Rear Image")
@@ -34,7 +34,7 @@ struct ContentView: View {
                 .background(Color.gray)
                 .onTapGesture {
                     ContoursAIFramework.shared.isLandscape = true
-                    viewModel.captureSide = .back
+                    viewModel.captureSide = DocumentSide.back.rawValue
                     shouldPresent = true
                 }
         }
