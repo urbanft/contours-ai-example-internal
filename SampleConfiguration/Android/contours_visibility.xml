@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Config to handle Preview visibility-->
+    <bool name="contours_preview_visibility">true</bool>
+    <bool name="contours_adjust_frame_button_visibility">true</bool>
+    <!--END-->
+
+    <!--Position exchange capture view and four corners action items-->
+    <bool name="contours_capture_close_icon_position_left">true</bool>
+    <bool name="contours_capture_retake_button_position_left">true</bool>
+    <!--END-->
+
+    <!--Overlay views-->
+    <bool name="contours_micr_view_overlay_visibility">true</bool>
+    <bool name="contours_endorse_view_overlay_visibility">true</bool>
+    <!--END-->
+
+    <!--Four corners selection screen config-->
+    <bool name="contours_retake_button_visibility">true</bool>
+    <bool name="contours_use_button_visibility">true</bool>
+    <bool name="contours_four_corner_selection_help_icon_visibility">true</bool>
+    <bool name="contours_four_corner_selection_close_icon_visibility">true</bool>
+    <bool name="contours_haptic_feedback_inline_enabled">true</bool>
+    <bool name="contours_haptic_feedback_success_enabled">true</bool>
+    <!--END-->
+
+    <!--Capturing hint views visibility-->
+    <bool name="contours_hint_layout_visibility">true</bool>
+    <bool name="contours_hint_arrow_icon_visibility">true</bool>
+    <bool name="contours_success_message_layout_visibility">true</bool>
+    <bool name="contours_success_icon_visibility">true</bool>
+
+    <!--Intro Screens visibility config-->
+    <bool name="contours_tips_intro_visibility">true</bool>
+    <bool name="contours_endorse_intro_visibility">true</bool>
+    <bool name="contours_four_corners_intro_visibility">true</bool>
+
+    <!--Icons visibility on capture screen-->
+    <bool name="contours_close_icon_visibility">true</bool>
+    <bool name="contours_flash_icon_visibility">true</bool>
+    <bool name="contours_info_icon_visibility">true</bool>
+
+    <!--If you set gravity true then close icon will display on right if false then close icon will display on left-->
+    <bool name="contours_tips_intro_close_icon_visibility">true</bool>
+    <bool name="contours_endorse_intro_close_icon_visibility">true</bool>
+    <bool name="contours_four_corners_intro_close_icon_visibility">true</bool>
+
+    <bool name="contours_tips_intro_cta_btn_visibility">true</bool>
+    <bool name="contours_endorse_intro_cta_btn_visibility">true</bool>
+    <bool name="contours_four_corners_intro_cta_btn_visibility">true</bool>
+
+    <bool name="contours_tips_intro_checkbox_visibility">true</bool>
+    <bool name="contours_four_corners_intro_checkbox_visibility">true</bool>
+</resources>

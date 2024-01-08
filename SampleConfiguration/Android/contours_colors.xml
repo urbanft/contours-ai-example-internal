@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Global color config-->
+    <color name="color_contours_text">#ffffff</color>
+    <color name="color_contours_CTA_primary_background">#346DE9</color>
+    <color name="color_contours_CTA_secondary_background">#FFFFFFFF</color>
+    <color name="color_contours_background">#252525</color>
+    <!--END-->
+
+    <!--Loading UI-->
+    <color name="color_loading_background">@color/color_contours_background</color>
+    <color name="color_loading_screen_CTA_background">@color/color_contours_CTA_primary_background</color>
+    <color name="color_loading_screen_CTA_text">@color/color_contours_CTA_secondary_background</color>
+    <color name="color_loading_screen_text">@color/color_contours_text</color>
+    <color name="color_loading_screen_progress_bar">@color/color_contours_CTA_primary_background</color>
+    <!--END-->
+
+    <!--Intro screens color config-->
+    <!--Default color of CTA background and checkbox text-->
+    <color name="color_intro_screen_checkbox_text">@color/color_contours_text</color>
+    <color name="color_intro_screen_CTA_background">@color/color_contours_CTA_primary_background</color>
+    <color name="color_intro_screen_checkbox_solid">@color/color_contours_CTA_secondary_background</color>
+    <color name="color_intro_screen_checkbox_border">#767676</color>
+    <color name="color_intro_screen_checkbox_tick">#2E3D5F</color>
+    <!---->
+
+    <!--Color config for tips intro screen-->
+    <color name="color_tips_intro_background">@color/color_contours_background</color>
+    <color name="color_tips_intro_screen_heading">@color/color_contours_text</color>
+    <color name="color_tips_intro_screen_subheading">@color/color_contours_text</color>
+    <color name="color_tips_intro_screen_CTA_text">@color/color_contours_CTA_secondary_background</color>
+    <color name="color_tips_intro_screen_CTA_background">@color/color_contours_CTA_primary_background</color>
+    <color name="color_tips_intro_screen_checkbox_text">@color/color_intro_screen_checkbox_text</color>
+    <!--Config of tips intro ends here-->
+
+    <!--Color config for four corners intro screen-->
+    <color name="color_four_corners_intro_background">@color/color_contours_background</color>
+    <color name="color_four_corners_point_circle_background">@color/color_contours_CTA_secondary_background</color>
+    <color name="color_four_corners_intro_screen_text">@color/color_contours_text</color>
+    <color name="color_four_corners_intro_screen_CTA_text">@color/color_contours_CTA_secondary_background</color>
+    <color name="color_four_corners_intro_screen_CTA_background">@color/color_intro_screen_CTA_background</color>
+    <color name="color_four_corners_intro_screen_checkbox_text">@color/color_intro_screen_checkbox_text</color>
+    <!--Config of four corners intro ends here-->
+
+    <!--Color config for endorse intro screen-->
+    <color name="color_endorse_intro_background">@color/color_contours_background</color>
+    <color name="color_endorse_intro_screen_heading">@color/color_contours_text</color>
+    <color name="color_endorse_intro_screen_subheading">@color/color_contours_text</color>
+    <color name="color_endorse_intro_screen_CTA_text">@color/color_contours_CTA_secondary_background</color>
+    <color name="color_endorse_intro_screen_CTA_background">@color/color_contours_CTA_primary_background</color>
+    <!--Config of endorse intro ends here-->
+
+    <!--Capture screen config-->
+    <color name="color_check_capture_background">@color/color_contours_background</color>
+    <color name="color_title_check_face_of_capture">@color/color_contours_text</color>
+    <color name="color_text_auto_on_off">@color/color_contours_CTA_secondary_background</color>
+    <color name="color_background_title_check_face">#cc2a2a2a</color>
+    <color name="color_background_auto_off_CTA">#802a2a2a</color>
+    <color name="color_background_auto_on_CTA">@color/color_contours_CTA_primary_background</color>
+    <!--END-->
+
+    <!--Hint arrows and background color config-->
+    <color name="color_hint_outline">#FF7006</color>
+    <color name="color_hint_bg">#FFE1DE</color>
+    <color name="color_hint_text">#2a2a2a</color>
+    <color name="color_success_hint_bg">#2E3D5F</color>
+    <color name="color_success_icon_bg">#098743</color>
+    <color name="color_success_text">#FFFFFFFF</color>
+    <!--END-->
+
+    <!--Color config for four corner selection-->
+    <color name="color_strip_top_message">#cc2a2a2a</color>
+    <color name="color_dot_four_corner">@color/color_contours_CTA_secondary_background</color>
+    <color name="color_dot_border_four_corner">#000000</color>
+    <color name="color_line_four_corner">#FF7006</color>
+    <color name="color_use_button_bg_four_corner">@color/color_contours_CTA_primary_background</color>
+    <color name="color_retake_button_bg_four_corner">@color/color_contours_CTA_secondary_background</color>
+    <color name="color_text_use_button_four_corner">@color/color_contours_CTA_secondary_background</color>
+    <color name="color_text_retake_button_four_corner">@color/color_contours_CTA_primary_background</color>
+    <color name="color_text_title_four_corner">@color/color_contours_text</color>
+    <!--END-->
+
+    <!--pop up dialog-->
+    <color name="color_contours_popup_title">#2a2a2a</color>
+    <color name="color_contours_popup_desc">#767676</color>
+    <color name="color_contours_popup_CTA_text">@color/color_contours_CTA_secondary_background</color>
+    <color name="color_contours_popup_background">@color/color_contours_background</color>
+    <!--END-->
+
+    <!--Overlay View config-->
+    <color name="color_contours_overlay_box">#80FFFFFF</color>
+    <color name="color_contours_micr_view">@color/color_contours_text</color>
+    <color name="color_contours_endorse_view">@color/color_contours_text</color>
+    <!--END-->
+
+</resources>

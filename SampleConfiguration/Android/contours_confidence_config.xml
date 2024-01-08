@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--dynamic_interval & dynamic_step_size values will only be used in case of is_dynamic_confidence true-->
+    <bool name="contours_is_dynamic_confidence">true</bool>
+    <integer name="contours_dynamic_interval_in_seconds">3</integer>
+    <item name="contours_dynamic_step_size" format="float" type="dimen">0.1</item>
+    <!---->
+
+    <item name="contours_config_threshold" format="float" type="dimen">0.2</item>
+    <item name="contours_nms_threshold" format="float" type="dimen">0.3</item>
+
+    <item name="contours_front_auto_confidence" format="float" type="dimen">0.9</item>
+    <item name="contours_rear_auto_confidence" format="float" type="dimen">0.9</item>
+    <item name="contours_front_manual_confidence" format="float" type="dimen">0.7</item>
+    <item name="contours_rear_manual_confidence" format="float" type="dimen">0.7</item>
+
+    <!--This is time duration after that pop up will come to switch from auto to manual-->
+    <integer name="contours_manual_switching_time_in_seconds">20</integer>
+
+</resources>

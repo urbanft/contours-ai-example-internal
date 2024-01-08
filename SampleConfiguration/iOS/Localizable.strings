@@ -1,0 +1,63 @@
+/* 
+ Localizable.strings
+ ContoursAI_SDK
+ 
+ Created by UrbanFT on 22/09/22.
+ 
+ */
+//UI Component String Value
+"contoursTipsHeading" = "Tips for capturing clear images:";
+"contoursTipsBodyPoint1" = "Ensure the entire check is clear and visible";
+"contoursTipsBodyPoint2" = "Separate the check from any pay stub or letter";
+"contoursTipsBodyPoint3" = "Hold phone steady while capturing the image";
+"contoursTipsBodyPoint4" = "Use dark background";
+"contoursDontShowAgain" = "Don’t show again";
+"contoursBegin" = "Begin";
+//Endorsememnt intro screen
+"contoursEndorsementBackCheckText" = "Endorse the back of your check and write:";
+"contoursEndorsementElectronicDepositText" = "For electronic deposit at custom_FI_name only.";
+"contoursEndorsementNowTakePictureText" = "Now let's take a picture of the back of your check.";
+"contoursContinueCTA" = "Continue";
+//Adjust Corner intro screen
+"contoursCornerIntroPoint1" = "Ensure the dots are aligned to the corners of the check & check is inside the frame.";
+"contoursCornerIntroPoint2" = "If needed, tap near a dot and drag to align it to a corner. ";
+"contoursGotIt" = "Got it";
+//Checkcapture intro screen
+"contoursCheckCaptureTitleFront" = " Front of check ";
+"contoursCheckCaptureTitleBack" = " Back of check ";
+"contoursMoveCameraLeft" = "Move camera left";
+"contoursMoveCameraRight" = "Move camera right";
+"contoursMoveCameraUp" = "Move camera up";
+"contoursMoveCameraDown" = "Move camera down";
+"contoursMoveCameraAway" = "Move camera away";
+"contoursCaptureSuccessful" = "Check capture successful";
+"contoursEnsureFourDots" = "Ensure the four dots are aligned to the corners of the check & the entire check is inside the frame.";
+"contoursRotateCheck" = "Rotate check to correct position";
+"contoursHoldStedy" = "Hold Steady";
+"contoursUse" = "Use";
+"contoursRetake" = "Retake";
+"contoursMicrOverlayText" = "********* ********* ****";
+"contoursEndorseOverlayText" = "ENDORSE HERE";
+"contoursAutoOn" = "Auto On";
+"contoursAutoOff" = "Auto Off";
+//Dialog View
+"contoursCameraAccessDeniedTitle" = "Camera access is off";
+"contoursCameraAccessDeniedDesc" = "To capture a check image with this app, you first need to allow camera access from Settings.";
+"contoursDialogViewButtonSetting" = "Settings";
+"contoursManualAlertDialogTitle" = "This is taking longer than expected";
+"contoursManualAlertDialogDesc" = "Try manual capture instead to take a picture of your check faster.";
+"contoursManualAlertDialogButton" = "Try Manual Capture";
+"contoursPositionCheckWithinTheFrame" = "Position check within the frame";
+"contoursEnsureAllFourCorner" = "Please ensure that all four corners of the check are inside the frame and use a contrasting background.";
+"contoursError" = "Error";
+//Loading Screen
+"contoursLoadingProgressMessage" = "Loading... Hang tight.";
+"contoursLoadingFailureMessage" = "Something went wrong. Please try again.";
+"contoursLoadingFailureTitle" = "Oops!";
+"contoursTryAgain" = "Try again";
+"contoursFlipCheckOver" = "Flip the check over";
+"contoursFlipCheckOverDesc" = "You are trying to capture wrong face of the check. Please flip the check over.";
+"moveCheckCloser" = "Move camera closer to the check";
+"ensureCheck" = "Ensure the check is inside the frame";
+"adjustFrame" = "Adjust frame";
+"improveLighting" = "Please improve the lighting.";

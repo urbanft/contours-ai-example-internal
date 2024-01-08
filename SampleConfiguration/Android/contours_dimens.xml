@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Overlay View config-->
+    <dimen name="text_size_micr_format">26dp</dimen>
+    <!--END-->
+
+    <!--Loading UI config-->
+    <dimen name="text_size_oops">34sp</dimen>
+    <dimen name="text_size_loading_screen_percentage_number">48sp</dimen>
+    <dimen name="text_size_loading_screen_percentage_sign">28sp</dimen>
+    <dimen name="text_size_loading_screen_description_text">16sp</dimen>
+    <dimen name="text_size_loading_screen_CTA_text">14sp</dimen>
+    <dimen name="width_loading_cta">244dp</dimen>
+    <!--END-->
+
+    <!--Capture Screen-->
+    <dimen name="text_size_title_check_face_of_capture">14sp</dimen>
+    <dimen name="text_size_auto_on_off">14sp</dimen>
+    <!--END-->
+
+    <!--pop up dialog-->
+    <dimen name="width_popup_dialog">360dp</dimen>
+    <dimen name="width_popup_cta">244dp</dimen>
+    <dimen name="text_size_title_popup">16sp</dimen>
+    <dimen name="text_size_desc_popup">14sp</dimen>
+    <dimen name="text_size_cta_popup">14sp</dimen>
+    <!--END-->
+
+    <!--Dots and line width config-->
+    <dimen name="radius_dot_four_corner">10dp</dimen>
+    <dimen name="thickness_line_four_corner">3dp</dimen>
+    <dimen name="thickness_dots_border_four_corner">1dp</dimen>
+    <dimen name="text_size_title_four_corner_selection">14sp</dimen>
+    <dimen name="text_size_CTA_four_corner_selection">14sp</dimen>
+    <!---->
+
+    <!--Text size of inline message-->
+    <dimen name="text_size_inline_message">16sp</dimen>
+    <dimen name="thickness_inline_message_border">3dp</dimen>
+    <dimen name="corner_radius_inline_message_border">6dp</dimen>
+
+    <!--TIPS INTRO: Config for text size and CTA button size and width-->
+    <dimen name="text_size_tips_intro_screen_heading">18sp</dimen>
+    <dimen name="text_size_tips_intro_screen_sub_heading">15sp</dimen>
+    <dimen name="margin_between_lines_tips_intro_screen_headings">2dp</dimen>
+    <dimen name="margin_tips_intro_screen_checkbox_top">16dp</dimen>
+    <dimen name="text_size_tips_intro_screen_checkbox">14dp</dimen>
+
+    <dimen name="width_tips_intro_screen_CTA_btn">176dp</dimen>
+    <dimen name="height_tips_intro_screen_CTA_btn">48dp</dimen>
+    <dimen name="text_size_tips_intro_screen_CTA_btn">16sp</dimen>
+    <!--END-->
+
+    <!--FOUR CORNERS INTRO: Config for text size and CTA button size and width-->
+    <dimen name="text_size_four_corner_intro_screen_point1">12sp</dimen>
+    <dimen name="text_size_four_corner_intro_screen_point2">12sp</dimen>
+    <dimen name="text_size_four_corner_intro_screen_text1">14sp</dimen>
+    <dimen name="text_size_four_corner_intro_screen_text2">14sp</dimen>
+    <dimen name="margin_four_corner_intro_screen_checkbox_top">16dp</dimen>
+    <dimen name="text_size_four_corners_intro_screen_checkbox">14dp</dimen>
+    <dimen name="width_four_corners_circle">sp22</dimen>
+
+    <dimen name="width_four_corners_intro_screen_CTA_btn">176dp</dimen>
+    <dimen name="height_four_corners_intro_screen_CTA_btn">46dp</dimen>
+    <dimen name="text_size_four_corners_intro_screen_CTA_btn">16sp</dimen>
+    <!--END-->
+
+    <!--ENDORSE INTRO: Config for text size and CTA button size and width-->
+    <dimen name="text_size_endorse_intro_screen_heading">16sp</dimen>
+    <dimen name="text_size_endorse_intro_screen_sub_heading">16sp</dimen>
+    <dimen name="width_endorse_intro_screen_CTA_btn">140dp</dimen>
+    <dimen name="height_endorse_intro_screen_CTA_btn">40dp</dimen>
+    <dimen name="text_size_endorse_intro_screen_CTA_btn">14sp</dimen>
+    <!--END-->
+
+</resources>
