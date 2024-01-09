@@ -58,7 +58,7 @@
     <dimen name="text_size_four_corner_intro_screen_text2">14sp</dimen>
     <dimen name="margin_four_corner_intro_screen_checkbox_top">16dp</dimen>
     <dimen name="text_size_four_corners_intro_screen_checkbox">14dp</dimen>
-    <dimen name="width_four_corners_circle">sp22</dimen>
+    <dimen name="width_four_corners_circle">22sp</dimen>
 
     <dimen name="width_four_corners_intro_screen_CTA_btn">176dp</dimen>
     <dimen name="height_four_corners_intro_screen_CTA_btn">46dp</dimen>
