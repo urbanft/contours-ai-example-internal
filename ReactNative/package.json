@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "contour-ai-sdk": "^1.6.0",
+    "contour-ai-sdk": "^1.7.0",
     "react": "18.2.0",
     "react-native": "0.72.6"
   },
