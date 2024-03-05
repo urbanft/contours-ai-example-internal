@@ -132,15 +132,6 @@
 			<true/>
 			<key>enableCloseButton</key>
 			<true/>
-			<key>imageName</key>
-			<string>crossImage</string>
-		</dict>
-		<key>cornerAjustmentIntro</key>
-		<dict>
-			<key>enablecornerAjustmentIntro</key>
-			<true/>
-			<key>imageName</key>
-			<string>crossImage</string>
 		</dict>
 		<key>title</key>
 		<dict>
@@ -164,8 +155,6 @@
 		<dict>
 			<key>showIntroButton</key>
 			<true/>
-			<key>imageName</key>
-			<string>helpIcon</string>
 		</dict>
 		<key>squareLayer</key>
 		<dict>
@@ -266,10 +255,7 @@
 			<true/>
 		</dict>
 		<key>maualCapturingCameraButton</key>
-		<dict>
-			<key>captureCameraIcon</key>
-			<string>cameraIcon</string>
-		</dict>
+		<dict/>
 		<key>autoOnButton</key>
 		<dict>
 			<key>buttonBackgroundColor</key>
@@ -348,17 +334,11 @@
 		<dict>
 			<key>showIntroButton</key>
 			<true/>
-			<key>imageName</key>
-			<string>introIcon</string>
 		</dict>
 		<key>flashIcon</key>
 		<dict>
 			<key>showFlashButton</key>
 			<true/>
-			<key>flashOnImage</key>
-			<string>flashOn</string>
-			<key>flashOffImage</key>
-			<string>flashOff</string>
 		</dict>
 		<key>closeButton</key>
 		<dict>
@@ -366,8 +346,6 @@
 			<true/>
 			<key>enableCloseButton</key>
 			<true/>
-			<key>imageName</key>
-			<string>crossImage</string>
 		</dict>
 	</dict>
 	<key>cornerIntroScreen</key>
@@ -481,8 +459,6 @@
 		<dict>
 			<key>enableCloseButton</key>
 			<true/>
-			<key>imageName</key>
-			<string>crossImage</string>
 			<key>isPositionTopLeft</key>
 			<true/>
 		</dict>
@@ -544,8 +520,6 @@
 		<dict>
 			<key>enableCloseButton</key>
 			<true/>
-			<key>imageName</key>
-			<string>crossImage</string>
 			<key>isPositionTopLeft</key>
 			<true/>
 		</dict>
@@ -558,8 +532,6 @@
 		<dict>
 			<key>enableCloseButton</key>
 			<true/>
-			<key>imageName</key>
-			<string>crossImage</string>
 			<key>isPositionTopLeft</key>
 			<true/>
 		</dict>
