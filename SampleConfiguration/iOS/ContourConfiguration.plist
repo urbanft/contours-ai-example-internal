@@ -2,6 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>commonConfig</key>
+	<dict>
+		<key>closeButton</key>
+		<dict>
+			<key>closeButtonImageWhite</key>
+			<string>contours_close_icon_white</string>
+			<key>closeButtonImageGray</key>
+			<string>contours_close_icon</string>
+		</dict>
+		<key>checkBox</key>
+		<dict>
+			<key>selectedImage</key>
+			<string>contours_checkbox_selected</string>
+			<key>unSelectedImage</key>
+			<string>contours_checkbox_unselected</string>
+		</dict>
+	</dict>
 	<key>checkConfidence</key>
 	<dict>
 		<key>dynamicConfidence</key>
@@ -34,6 +51,8 @@
 	</dict>
 	<key>progressScreen</key>
 	<dict>
+		<key>failureImage</key>
+		<string>contours_oops_icon</string>
 		<key>progressBarColor</key>
 		<string>346DE9</string>
 		<key>progressScreenBackgroundColor</key>
@@ -133,6 +152,13 @@
 			<key>enableCloseButton</key>
 			<true/>
 		</dict>
+		<key>cornerAjustmentIntro</key>
+		<dict>
+			<key>enablecornerAjustmentIntro</key>
+			<true/>
+			<key>imageName</key>
+			<string>crossImage</string>
+		</dict>
 		<key>title</key>
 		<dict>
 			<key>showTitle</key>
@@ -155,6 +181,8 @@
 		<dict>
 			<key>showIntroButton</key>
 			<true/>
+			<key>imageName</key>
+			<string>contours_icon_help</string>
 		</dict>
 		<key>squareLayer</key>
 		<dict>
@@ -201,6 +229,32 @@
 	</dict>
 	<key>imageCapturingScreen</key>
 	<dict>
+		<key>autoManualOverlay</key>
+		<dict>
+			<key>overlayBackgroundColor</key>
+			<dict>
+				<key>opacity</key>
+				<real>0.8</real>
+				<key>colorHexCode</key>
+				<string>2a2a2a</string>
+			</dict>
+			<key>enableOverlay</key>
+			<true/>
+			<key>toggleOnThumbColorHexCode</key>
+			<string>346DE9</string>
+			<key>toggleOnTrackColorHexCode</key>
+			<string>ffffff</string>
+			<key>toggleOffTrackColorHexCode</key>
+			<string>e5e5e5</string>
+			<key>toggleOffThumbColorHexCode</key>
+			<string>ffffff</string>
+			<key>textFontColorHexCode</key>
+			<string>ffffff</string>
+			<key>textFontSize</key>
+			<integer>12</integer>
+			<key>textFontName</key>
+			<string>Poppins-Bold</string>
+		</dict>
 		<key>manualCapturingPopupTimeInterval</key>
 		<integer>20</integer>
 		<key>previewTitle</key>
@@ -255,24 +309,9 @@
 			<true/>
 		</dict>
 		<key>maualCapturingCameraButton</key>
-		<dict/>
-		<key>autoOnButton</key>
 		<dict>
-			<key>buttonBackgroundColor</key>
-			<string>346DE9</string>
-			<key>buttonSize</key>
-			<dict>
-				<key>height</key>
-				<integer>31</integer>
-				<key>width</key>
-				<integer>80</integer>
-			</dict>
-			<key>fontColorHexCode</key>
-			<string>FFFFFF</string>
-			<key>fontSize</key>
-			<integer>17</integer>
-			<key>fontName</key>
-			<string>Poppins-Regular</string>
+			<key>captureCameraImage</key>
+			<string>contours_camera_capture_btn</string>
 		</dict>
 		<key>imageHoldTime</key>
 		<integer>6</integer>
@@ -334,11 +373,17 @@
 		<dict>
 			<key>showIntroButton</key>
 			<true/>
+			<key>imageName</key>
+			<string>contours_icon_info</string>
 		</dict>
 		<key>flashIcon</key>
 		<dict>
 			<key>showFlashButton</key>
 			<true/>
+			<key>flashOnImage</key>
+			<string>contours_icon_flash_on</string>
+			<key>flashOffImage</key>
+			<string>contours_icon_flash_off</string>
 		</dict>
 		<key>closeButton</key>
 		<dict>
