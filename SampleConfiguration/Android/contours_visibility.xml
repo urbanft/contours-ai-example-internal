@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--Capturing screen-->
+    <bool name="contours_auto_on_off_visibility">true</bool>
+    <!--END-->
+
     <!--Config to handle Preview visibility-->
     <bool name="contours_preview_visibility">true</bool>
     <bool name="contours_adjust_frame_button_visibility">true</bool>

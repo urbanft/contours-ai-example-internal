@@ -3,8 +3,8 @@
     <string name="contours_fi_name">custom_FI_name</string>
 
     <!--Manual Capture-->
-    <string name="contours_auto_on">Auto On</string>
-    <string name="contours_auto_off">Auto Off</string>
+    <string name="contours_auto_on">Auto Capture ON</string>
+    <string name="contours_auto_off">Auto Capture OFF</string>
     <string name="contours_front_of_check">Front of check</string>
     <string name="contours_back_of_check">Back of check</string>
     <string name="contours_dialog_title_to_position_check">Position check within the frame</string>

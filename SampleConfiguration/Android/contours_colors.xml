@@ -56,8 +56,11 @@
     <color name="color_title_check_face_of_capture">@color/color_contours_text</color>
     <color name="color_text_auto_on_off">@color/color_contours_CTA_secondary_background</color>
     <color name="color_background_title_check_face">#cc2a2a2a</color>
-    <color name="color_background_auto_off_CTA">#802a2a2a</color>
-    <color name="color_background_auto_on_CTA">@color/color_contours_CTA_primary_background</color>
+    <color name="color_background_auto_on_off">#cc2a2a2a</color>
+    <color name="color_switch_thumb_active">#346DE9</color>
+    <color name="color_switch_track_inactive">#E5E5E5</color>
+    <color name="color_switch_thumb_inactive">#f6f7f7</color>
+    <color name="color_switch_track_active">#FFFFFF</color>
     <!--END-->
 
     <!--Hint arrows and background color config-->

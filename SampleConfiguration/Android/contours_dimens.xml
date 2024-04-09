@@ -15,7 +15,7 @@
 
     <!--Capture Screen-->
     <dimen name="text_size_title_check_face_of_capture">14sp</dimen>
-    <dimen name="text_size_auto_on_off">14sp</dimen>
+    <dimen name="text_size_auto_on_off">12sp</dimen>
     <!--END-->
 
     <!--pop up dialog-->
