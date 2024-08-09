@@ -42,8 +42,6 @@
     <!--TIPS INTRO: Config for text size and CTA button size and width-->
     <dimen name="text_size_tips_intro_screen_heading">18sp</dimen>
     <dimen name="text_size_tips_intro_screen_sub_heading">15sp</dimen>
-    <dimen name="margin_between_lines_tips_intro_screen_headings">2dp</dimen>
-    <dimen name="margin_tips_intro_screen_checkbox_top">16dp</dimen>
     <dimen name="text_size_tips_intro_screen_checkbox">14dp</dimen>
 
     <dimen name="width_tips_intro_screen_CTA_btn">176dp</dimen>
@@ -56,7 +54,6 @@
     <dimen name="text_size_four_corner_intro_screen_point2">12sp</dimen>
     <dimen name="text_size_four_corner_intro_screen_text1">14sp</dimen>
     <dimen name="text_size_four_corner_intro_screen_text2">14sp</dimen>
-    <dimen name="margin_four_corner_intro_screen_checkbox_top">16dp</dimen>
     <dimen name="text_size_four_corners_intro_screen_checkbox">14dp</dimen>
     <dimen name="width_four_corners_circle">22sp</dimen>
 

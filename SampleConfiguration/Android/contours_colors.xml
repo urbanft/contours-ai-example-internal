@@ -88,7 +88,9 @@
     <color name="color_contours_popup_title">#2a2a2a</color>
     <color name="color_contours_popup_desc">#767676</color>
     <color name="color_contours_popup_CTA_text">@color/color_contours_CTA_secondary_background</color>
+    <color name="color_contours_popup_CTA_background">#346DE9</color>
     <color name="color_contours_popup_background">@color/color_contours_background</color>
+    <color name="color_contours_popup">#FFFFFF</color>
     <!--END-->
 
     <!--Overlay View config-->

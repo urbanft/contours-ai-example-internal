@@ -2,6 +2,13 @@
 
     <string name="contours_fi_name">custom_FI_name</string>
 
+    <!--Fonts config-->
+    <string name="contours_font_bold">Poppins-Bold</string>
+    <string name="contours_font_semi_bold">Poppins-SemiBold</string>
+    <string name="contours_font_regular">Poppins-Regular</string>
+    <string name="contours_font_file_extension">.ttf</string>
+    <!--END-->
+
     <!--Manual Capture-->
     <string name="contours_auto_on">Auto Capture ON</string>
     <string name="contours_auto_off">Auto Capture OFF</string>
@@ -86,4 +93,12 @@
     <string name="contours_continue">Continue</string>
     <!--END-->
 
+    <!--Strings If open cv fails to enable view-->
+    <string name="contours_camera_initialisation_title">Camera initialization</string>
+    <string name="contours_camera_initialisation_desc">Failed to initialize camera</string>
+    <string name="contours_camera_access_is_off">Camera access is off</string>
+    <string name="contours_message_camera_permission_required">To capture a check image with this app, you first need to allow camera access from Settings.</string>
+    <string name="contours_camera_permission_is_denied">Camera permission is denied</string>
+    <string name="contours_settings">Settings</string>
+    <!--END-->
 </resources>

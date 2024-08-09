@@ -4,4 +4,9 @@
     <bool name="contours_tips_intro_screen_close_icon_gravity_right">false</bool>
     <bool name="contours_endorse_intro_screen_close_icon_gravity_right">false</bool>
     <bool name="contours_four_corners_intro_screen_close_icon_gravity_right">false</bool>
+
+    <!--Position exchange capture view and four corners action items-->
+    <bool name="contours_capture_close_icon_position_left">true</bool>
+    <bool name="contours_capture_retake_button_position_left">true</bool>
+    <!--END-->
 </resources>
