@@ -38,8 +38,8 @@
 "contoursRetake" = "Retake";
 "contoursMicrOverlayText" = "********* ********* ****";
 "contoursEndorseOverlayText" = "ENDORSE HERE";
-"contoursAutoOn" = "Auto On";
-"contoursAutoOff" = "Auto Off";
+"contoursAutoOn" = "Auto Capture On";
+"contoursAutoOff" = "Auto Capture Off";
 //Dialog View
 "contoursCameraAccessDeniedTitle" = "Camera access is off";
 "contoursCameraAccessDeniedDesc" = "To capture a check image with this app, you first need to allow camera access from Settings.";
@@ -57,7 +57,8 @@
 "contoursTryAgain" = "Try again";
 "contoursFlipCheckOver" = "Flip the check over";
 "contoursFlipCheckOverDesc" = "You are trying to capture wrong face of the check. Please flip the check over.";
-"moveCheckCloser" = "Move camera closer to the check";
-"ensureCheck" = "Ensure the check is inside the frame";
-"adjustFrame" = "Adjust frame";
-"improveLighting" = "Please improve the lighting.";
+"contoursMoveCheckCloser" = "Move camera closer to the check";
+"contoursEnsureCheck" = "Ensure the check is inside the frame";
+"contoursAdjustFrame" = "Adjust frame";
+"contoursImproveLighting" = "Please improve the lighting.";
+"contoursInsufficientStorageError" = "You do not have enough storage to continue scanning.";

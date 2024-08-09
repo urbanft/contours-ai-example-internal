@@ -2,6 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>globalSDKConfig</key>
+	<dict>
+		<key>contoursFIName</key>
+		<string>custom_FI_name</string>
+		<key>fontColor</key>
+		<string>FFFFFF</string>
+		<key>fontName</key>
+		<string>Poppins</string>
+		<key>secondaryColor</key>
+		<string>FFFFFF</string>
+		<key>primaryColor</key>
+		<string>346DE9</string>
+		<key>backgroundColor</key>
+		<string>252525</string>
+	</dict>
 	<key>commonConfig</key>
 	<dict>
 		<key>closeButton</key>
@@ -96,6 +111,8 @@
 	</dict>
 	<key>popupScreen</key>
 	<dict>
+		<key>backgroundColorHexCode</key>
+		<string>FFFFFF</string>
 		<key>buttonCTA</key>
 		<dict>
 			<key>fontName</key>
@@ -128,21 +145,6 @@
 		<key>popupWidth</key>
 		<integer>300</integer>
 	</dict>
-	<key>globalSDKConfig</key>
-	<dict>
-		<key>contoursFIName</key>
-		<string>custom_FI_name</string>
-		<key>fontColor</key>
-		<string>FFFFFF</string>
-		<key>fontName</key>
-		<string>Poppins</string>
-		<key>secondaryColor</key>
-		<string>FFFFFF</string>
-		<key>primaryColor</key>
-		<string>346DE9	</string>
-		<key>backgroundColor</key>
-		<string>252525</string>
-	</dict>
 	<key>cornerSelectionScreen</key>
 	<dict>
 		<key>closeButton</key>
@@ -151,13 +153,6 @@
 			<true/>
 			<key>enableCloseButton</key>
 			<true/>
-		</dict>
-		<key>cornerAjustmentIntro</key>
-		<dict>
-			<key>enablecornerAjustmentIntro</key>
-			<true/>
-			<key>imageName</key>
-			<string>crossImage</string>
 		</dict>
 		<key>title</key>
 		<dict>
@@ -378,6 +373,8 @@
 		</dict>
 		<key>flashIcon</key>
 		<dict>
+			<key>isFlashDefaultOn</key>
+			<true/>
 			<key>showFlashButton</key>
 			<true/>
 			<key>flashOnImage</key>
