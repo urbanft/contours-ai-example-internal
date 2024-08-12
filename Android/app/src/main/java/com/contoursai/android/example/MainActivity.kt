@@ -82,6 +82,10 @@ class MainActivity : AppCompatActivity() {
             override fun onEventCapture(eventJsonString: String) {
                   print(eventJsonString)
             }
+            
+            override fun onContourClosed() {
+                  println("---------- SDK closed")
+            }
         })
     }
 
