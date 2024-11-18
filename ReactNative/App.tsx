@@ -41,6 +41,7 @@ export default function App() {
           }}>
           {frontImageUri && <Image
             style={styles.imageStyle}
+            resizeMode="contain"
             source={{ uri: frontImageUri }} />}
 
         </TouchableOpacity>
@@ -51,6 +52,7 @@ export default function App() {
           }}>
           {rearImageUri && <Image
             style={styles.imageStyle}
+            resizeMode="contain"
             source={{ uri: rearImageUri }} />}
         </TouchableOpacity>
       </View>
@@ -60,21 +62,23 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-   flex: 1,
+    flex: 1,
   },
   placeholderContainer: {
     height: 200,
     backgroundColor: 'gray',
     margin: 16,
+    justifyContent: 'center', // Center content vertically
+    alignItems: 'center', // Center content horizontally
   },
   checkSideLabel: {
     color: 'black',
     textAlign: 'center',
     padding: 10,
-    marginTop:50,
+    marginTop: 50,
   },
   imageStyle: {
-    height: 200,
-
-  }
+    width: '100%', // Optional: Ensure the image fits within the container
+    height: '100%', // Optional: Adjust the height based on your needs
+  },
 });
