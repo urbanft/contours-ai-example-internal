@@ -104,7 +104,7 @@ class _MyAppState extends State<MyApp> {
               const Text("Back",
                   style: TextStyle(fontSize: 16, color: Colors.black87)),
               const SizedBox(height: 16),
-              _buildImageWidget(rearImageUri, 400, 200, 'rear'),
+              _buildImageWidget(rearImageUri, 400, 200, 'back'),
             ],
           ))),
     );
