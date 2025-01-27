@@ -78,6 +78,14 @@ android {
     compileSdk rootProject.ext.compileSdkVersion
 
     namespace "com.contouraisdk"
+
+    packagingOptions {
+        pickFirst '/lib/armeabi-v7a/libopencv_java4.so'
+        pickFirst '/lib/arm64-v8a/libopencv_java4.so'
+        pickFirst '/lib/x86/libopencv_java4.so'
+        pickFirst '/lib/x86_64/libopencv_java4.so'
+    }
+
     defaultConfig {
         applicationId "com.contouraisdk"
         minSdkVersion rootProject.ext.minSdkVersion
