@@ -1,16 +1,22 @@
-
 import React from 'react';
 import { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
-import { startContourSDK, onContourClosed, onEventCaptured  } from 'contour-ai-sdk';
+import { startContour, onContourClosed, ContourModel, onEventCaptured } from 'contour-ai-sdk';
 
-export default function App() {
+export default function ScanCheck() {
   const [frontImageUri, setFrontImageUri] = useState<string>('');
   const [rearImageUri, setRearImageUri] = useState<string>('');
 
-  const startSDK = (checkSide: string) => {
-    startContourSDK(checkSide, '<CLIENT_ID>', 'both', false, updateState);
-  }
+   const startSDK = (checkSide: string) => {
+      const contoursModel: ContourModel = {
+        clientId: '<CLIENT_ID>',
+        captureType: 'both',
+        enableMultipleCapturing: false,
+        type: 'check',
+        capturingSide: checkSide
+      };
+      startContour(contoursModel, updateState);
+    };
 
   onContourClosed(() => {
     console.log('SDK closed')
@@ -69,8 +75,8 @@ const styles = StyleSheet.create({
     height: 200,
     backgroundColor: 'gray',
     margin: 16,
-    justifyContent: 'center', // Center content vertically
-    alignItems: 'center', // Center content horizontally
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   checkSideLabel: {
     color: 'black',
@@ -79,7 +85,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   imageStyle: {
-    width: '100%', // Optional: Ensure the image fits within the container
-    height: '100%', // Optional: Adjust the height based on your needs
+    width: '100%',
+    height: '100%',
   },
 });
