@@ -31,7 +31,7 @@ struct ContoursSDK: UIViewControllerRepresentable {
         let configModel = ContoursModel(clientId: "<YOUR CLIENT ID>",
                                         captureType: CaptureType.both.rawValue,
                                         type: docType,
-                                        capturingSide: DocumentSide.front.rawValue,
+                                        capturingSide: captureSide,
                                         delegate: ContourCallback(self))
         let contourSDKVC = ContoursAIFramework().startContour(configModel: configModel,enableMultipleCapturing: false)
         let navVC = UINavigationController(rootViewController: contourSDKVC)
