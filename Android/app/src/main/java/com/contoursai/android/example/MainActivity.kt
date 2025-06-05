@@ -1,7 +1,6 @@
 package com.contoursai.android.example
 
 import android.Manifest
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -22,6 +21,7 @@ import com.contourdocumentimaging.android.contours_ai.models.ContoursCapturingMo
 import com.contourdocumentimaging.android.contours_ai.models.ContoursModel
 import com.contourdocumentimaging.android.contours_ai.models.ContoursResultModel
 import com.contourdocumentimaging.android.contours_ai.models.ContoursScanType
+import com.contoursai.android.example.utils.StatusBarUtils
 import java.net.URI
 import java.net.URISyntaxException
 
@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity() {
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        StatusBarUtils.updateStatusBarColor(this)
         tvFront = findViewById<View>(R.id.tvFront) as TextView
         tvBack = findViewById<View>(R.id.tvBack) as TextView
         ivFront = findViewById<View>(R.id.ivFront) as ImageView
