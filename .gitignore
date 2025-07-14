@@ -84,3 +84,4 @@ Build
 *.xcbkptlist
 
 ReactNative/android/app/.cxx/*
+ReactNative/node_modules
