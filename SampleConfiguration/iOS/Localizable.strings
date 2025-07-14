@@ -1,10 +1,10 @@
-/* 
- Localizable.strings
- ContoursAI_SDK
- 
- Created by UrbanFT on 22/09/22.
- 
- */
+/*
+Localizable.strings
+ContoursAI_SDK
+
+Created by UrbanFT on 22/09/22.
+
+*/
 //UI Component String Value
 "contoursTipsHeading" = "Tips for capturing clear images:";
 "contoursTipsBodyPoint1" = "Ensure the entire check is clear and visible";
@@ -33,6 +33,7 @@
 "contoursCaptureSuccessful" = "Check capture successful";
 "contoursEnsureFourDots" = "Ensure the four dots are aligned to the corners of the check & the entire check is inside the frame.";
 "contoursRotateCheck" = "Rotate check to correct position";
+"contoursInvertCheck" = "Invert the check";
 "contoursHoldStedy" = "Hold Steady";
 "contoursUse" = "Use";
 "contoursRetake" = "Retake";
@@ -42,7 +43,7 @@
 "contoursAutoCaptureOff" = "Auto Capture Off";
 //Dialog View
 "contoursCameraAccessDeniedTitle" = "Camera access is off";
-"contoursCameraAccessDeniedDesc" = "To capture a check image with this app, you first need to allow camera access from Settings.";
+"contoursCameraAccessDeniedDesc" = "To capture a check image with this app, you first need to allow camera access from settings.";
 "contoursDialogViewButtonSetting" = "Settings";
 "contoursManualAlertDialogTitle" = "This is taking longer than expected";
 "contoursManualAlertDialogDesc" = "Try manual capture instead to take a picture of your check faster.";
@@ -59,7 +60,6 @@
 "contoursMoveCheckCloser" = "Move camera closer to the check";
 "contoursEnsureCheck" = "Ensure the check is inside the frame";
 "contoursAdjustFrame" = "Adjust frame";
-"contoursImproveLighting" = "Please improve the lighting.";
 "contoursInsufficientStorageError" = "You do not have enough storage to continue scanning.";
 
 // ID
@@ -67,22 +67,24 @@
 "contoursIDCaptureSuccessful" = "ID capture successful";
 "contoursIDCaptureTitleFront" = " Front of ID ";
 "contoursIDCaptureTitleBack" = "Back of ID ";
-"contoursPassportCaptureTitleFront" = "Front of Passport";
 "contoursFlipIDOverDesc" = "You are trying to capture wrong face of the ID. Please flip the ID over.";
 "contoursManualAlertIDDialogDesc" = "Try manual capture instead to take a picture of your ID faster.";
 "contoursPositionIDWithinTheFrame" = "Position ID within the frame";
 "contoursEnsureAllFourCornerID" = "Please ensure that all four corners of the ID are inside the frame and use a contrasting background.";
-"contoursIDCameraAccessDeniedDesc" = "To capture an ID image with this app, you first need to allow camera access from Settings.";
+"contoursIDCameraAccessDeniedDesc" = "To capture an ID image with this app, you first need to allow camera access from settings.";
 "contoursMoveIDCloser" = "Move camera closer to the ID";
 "contoursRotateID" = "Rotate the ID to correct position";
 "contoursAutoOn" = "Auto On";
 "contoursAutoOff" = "Auto Off";
+"contoursInvertID" = "Invert the ID";
+
 // Passport
 "contoursPassportCaptureSuccessful" = "Passport capture successful";
 "contoursPassportCaptureTitleFront" = "Passport ";
-"contoursPassportManualAlertDialogDesc" = "Try manual capture instead to take a picture of your Passport faster.";
-"contoursPassportPositionWithinTheFrame" = "Position Passport within the frame";
-"contoursPassportEnsureAllFourCorner" = "Please ensure that all four corners of the Passport are inside the frame and use a contrasting background.";
-"contoursPassportMoveCloser" = "Move camera closer to the Passport";
+"contoursPassportManualAlertDialogDesc" = "Try manual capture instead to take a picture of your passport faster.";
+"contoursPassportPositionWithinTheFrame" = "Position passport within the frame";
+"contoursPassportEnsureAllFourCorner" = "Please ensure that all four corners of the passport are inside the frame and use a contrasting background.";
+"contoursPassportMoveCloser" = "Move camera closer to the passport";
 "contoursPassportRotate" = "Rotate the Passport to correct position";
-"contoursPassportCameraAccessDeniedDesc" = "To capture a Passport image with this app, you first need to allow camera access from Settings.";
+"contoursPassportCameraAccessDeniedDesc" = "To capture a passport image with this app, you first need to allow camera access from settings.";
+"contoursInvertPassport" = "Invert the passport"; 

@@ -17,4 +17,6 @@
     <!--This is time duration after that pop up will come to switch from auto to manual-->
     <integer name="contours_manual_switching_time_in_seconds">20</integer>
 
+    <!--Switching time for ID/Passport-->
+    <integer name="contours_id_manual_switching_time_in_seconds">20</integer>
 </resources>

@@ -18,8 +18,8 @@
     <!--END-->
 
     <!--Manual Capture-->
-    <string name="contours_auto_on">Auto Capture ON</string>
-    <string name="contours_auto_off">Auto Capture OFF</string>
+    <string name="contours_auto_on">Auto Capture On</string>
+    <string name="contours_auto_off">Auto Capture Off</string>
     <string name="contours_front_of_check">Front of check</string>
     <string name="contours_back_of_check">Back of check</string>
     <string name="contours_dialog_title_to_position_check">Position check within the frame</string>
@@ -92,7 +92,6 @@
     <string name="contours_camera_initialisation_desc">Failed to initialize camera</string>
     <string name="contours_camera_access_is_off">Camera access is off</string>
     <string name="contours_message_camera_permission_required">To capture a check image with this app, you first need to allow camera access from Settings.</string>
-    <string name="contours_camera_permission_is_denied">Camera permission is denied</string>
     <string name="contours_settings">Settings</string>
     <!--END-->
 
@@ -104,11 +103,12 @@
     <string name="contours_invert_id">Invert the ID</string>
 
     <string name="contours_passport_captured_successfully">Passport captured successful</string>
-    <string name="contours_rotate_passport">Rotate Passport to correct position</string>
-    <string name="contours_invert_passport">Invert the Passport</string>
+    <string name="contours_rotate_passport">Rotate passport to correct position</string>
+    <string name="contours_invert_passport">Invert the passport</string>
+    <string name="contours_move_camera_closer_passport">Move camera closer to passport</string>
 
-    <string name="contours_auto_on_id">Auto ON</string>
-    <string name="contours_auto_off_id">Auto OFF</string>
+    <string name="contours_auto_on_id">Auto On</string>
+    <string name="contours_auto_off_id">Auto Off</string>
 
     <string name="contours_dialog_title_wrong_face_id">Flip the ID over</string>
     <string name="contours_dialog_message_wrong_face_id">You are trying to capture wrong face of the ID. Please flip the ID over.</string>
@@ -124,6 +124,9 @@
     <string name="contours_passport">Passport</string>
     <string name="contours_id_front">Front of ID</string>
     <string name="contours_id_back">Back of ID</string>
+
+    <string name="contours_id_use">Use</string>
+    <string name="contours_id_retake">Retake</string>
 
     <string name="contours_message_camera_permission_required_id">To capture an ID image with this app, you first need to allow camera access from Settings.</string>
     <string name="contours_message_camera_permission_required_passport">To capture a passport image with this app, you first need to allow camera access from Settings.</string>
