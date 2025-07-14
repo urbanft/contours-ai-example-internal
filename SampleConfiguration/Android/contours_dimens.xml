@@ -1,73 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--Overlay View config-->
-    <dimen name="text_size_micr_format">26dp</dimen>
+    <dimen name="text_size_micr_format">@dimen/dp_26</dimen>
     <!--END-->
 
     <!--Loading UI config-->
-    <dimen name="text_size_oops">34sp</dimen>
-    <dimen name="text_size_loading_screen_percentage_number">48sp</dimen>
-    <dimen name="text_size_loading_screen_percentage_sign">28sp</dimen>
-    <dimen name="text_size_loading_screen_description_text">16sp</dimen>
-    <dimen name="text_size_loading_screen_CTA_text">14sp</dimen>
-    <dimen name="width_loading_cta">244dp</dimen>
+    <dimen name="text_size_oops">@dimen/sp_34</dimen>
+    <dimen name="text_size_loading_screen_percentage_number">@dimen/sp_48</dimen>
+    <dimen name="text_size_loading_screen_percentage_sign">@dimen/sp_28</dimen>
+    <dimen name="text_size_loading_screen_description_text">@dimen/sp_16</dimen>
+    <dimen name="text_size_loading_screen_CTA_text">@dimen/sp_14</dimen>
+    <dimen name="width_loading_cta">@dimen/dp_244</dimen>
     <!--END-->
 
     <!--Capture Screen-->
-    <dimen name="text_size_title_check_face_of_capture">14sp</dimen>
-    <dimen name="text_size_auto_on_off">12sp</dimen>
+    <dimen name="text_size_title_check_face_of_capture">@dimen/sp_14</dimen>
+    <dimen name="text_size_auto_on_off">@dimen/sp_12</dimen>
     <!--END-->
 
     <!--pop up dialog-->
-    <dimen name="width_popup_dialog">360dp</dimen>
-    <dimen name="width_popup_cta">244dp</dimen>
-    <dimen name="text_size_title_popup">16sp</dimen>
-    <dimen name="text_size_desc_popup">14sp</dimen>
-    <dimen name="text_size_cta_popup">14sp</dimen>
+    <dimen name="width_popup_dialog">@dimen/dp_360</dimen>
+    <dimen name="width_popup_cta">@dimen/dp_244</dimen>
+    <dimen name="text_size_title_popup">@dimen/sp_16</dimen>
+    <dimen name="text_size_desc_popup">@dimen/sp_14</dimen>
+    <dimen name="text_size_cta_popup">@dimen/sp_14</dimen>
     <!--END-->
 
     <!--Dots and line width config-->
-    <dimen name="radius_dot_four_corner">10dp</dimen>
-    <dimen name="thickness_line_four_corner">3dp</dimen>
-    <dimen name="thickness_dots_border_four_corner">1dp</dimen>
-    <dimen name="text_size_title_four_corner_selection">14sp</dimen>
-    <dimen name="text_size_CTA_four_corner_selection">14sp</dimen>
+    <dimen name="radius_dot_four_corner">@dimen/dp_10</dimen>
+    <dimen name="thickness_line_four_corner">@dimen/dp_3</dimen>
+    <dimen name="thickness_dots_border_four_corner">@dimen/dp_1</dimen>
+    <dimen name="text_size_title_four_corner_selection">@dimen/sp_14</dimen>
+    <dimen name="text_size_CTA_four_corner_selection">@dimen/sp_14</dimen>
     <!---->
 
     <!--Text size of inline message-->
-    <dimen name="text_size_inline_message">16sp</dimen>
-    <dimen name="thickness_inline_message_border">3dp</dimen>
-    <dimen name="corner_radius_inline_message_border">6dp</dimen>
+    <dimen name="text_size_inline_message">@dimen/sp_16</dimen>
+    <dimen name="thickness_inline_message_border">@dimen/dp_3</dimen>
+    <dimen name="corner_radius_inline_message_border">@dimen/dp_6</dimen>
 
     <!--TIPS INTRO: Config for text size and CTA button size and width-->
-    <dimen name="text_size_tips_intro_screen_heading">18sp</dimen>
-    <dimen name="text_size_tips_intro_screen_sub_heading">15sp</dimen>
-    <dimen name="text_size_tips_intro_screen_checkbox">14dp</dimen>
+    <dimen name="text_size_tips_intro_screen_heading">@dimen/sp_18</dimen>
+    <dimen name="text_size_tips_intro_screen_sub_heading">@dimen/sp_15</dimen>
+    <dimen name="text_size_tips_intro_screen_checkbox">@dimen/dp_14</dimen>
 
-    <dimen name="width_tips_intro_screen_CTA_btn">176dp</dimen>
-    <dimen name="height_tips_intro_screen_CTA_btn">48dp</dimen>
-    <dimen name="text_size_tips_intro_screen_CTA_btn">16sp</dimen>
+    <dimen name="width_tips_intro_screen_CTA_btn">@dimen/dp_176</dimen>
+    <dimen name="height_tips_intro_screen_CTA_btn">@dimen/dp_48</dimen>
+    <dimen name="text_size_tips_intro_screen_CTA_btn">@dimen/sp_16</dimen>
     <!--END-->
 
     <!--FOUR CORNERS INTRO: Config for text size and CTA button size and width-->
-    <dimen name="text_size_four_corner_intro_screen_point1">12sp</dimen>
-    <dimen name="text_size_four_corner_intro_screen_point2">12sp</dimen>
-    <dimen name="text_size_four_corner_intro_screen_text1">14sp</dimen>
-    <dimen name="text_size_four_corner_intro_screen_text2">14sp</dimen>
-    <dimen name="text_size_four_corners_intro_screen_checkbox">14dp</dimen>
-    <dimen name="width_four_corners_circle">22sp</dimen>
+    <dimen name="text_size_four_corner_intro_screen_point1">@dimen/sp_12</dimen>
+    <dimen name="text_size_four_corner_intro_screen_point2">@dimen/sp_12</dimen>
+    <dimen name="text_size_four_corner_intro_screen_text1">@dimen/sp_14</dimen>
+    <dimen name="text_size_four_corner_intro_screen_text2">@dimen/sp_14</dimen>
+    <dimen name="text_size_four_corners_intro_screen_checkbox">@dimen/dp_14</dimen>
+    <dimen name="width_four_corners_circle">@dimen/sp_22</dimen>
 
-    <dimen name="width_four_corners_intro_screen_CTA_btn">176dp</dimen>
-    <dimen name="height_four_corners_intro_screen_CTA_btn">46dp</dimen>
-    <dimen name="text_size_four_corners_intro_screen_CTA_btn">16sp</dimen>
+    <dimen name="width_four_corners_intro_screen_CTA_btn">@dimen/dp_176</dimen>
+    <dimen name="height_four_corners_intro_screen_CTA_btn">@dimen/dp_46</dimen>
+    <dimen name="text_size_four_corners_intro_screen_CTA_btn">@dimen/sp_16</dimen>
     <!--END-->
 
     <!--ENDORSE INTRO: Config for text size and CTA button size and width-->
-    <dimen name="text_size_endorse_intro_screen_heading">16sp</dimen>
-    <dimen name="text_size_endorse_intro_screen_sub_heading">16sp</dimen>
-    <dimen name="width_endorse_intro_screen_CTA_btn">140dp</dimen>
-    <dimen name="height_endorse_intro_screen_CTA_btn">40dp</dimen>
-    <dimen name="text_size_endorse_intro_screen_CTA_btn">14sp</dimen>
+    <dimen name="text_size_endorse_intro_screen_heading">@dimen/sp_16</dimen>
+    <dimen name="text_size_endorse_intro_screen_sub_heading">@dimen/sp_16</dimen>
+    <dimen name="height_endorse_intro_screen_CTA_btn">@dimen/dp_40</dimen>
+    <dimen name="text_size_endorse_intro_screen_CTA_btn">@dimen/sp_14</dimen>
     <!--END-->
+
+    <!--ID/Passport text sizes-->
+    <!--Capture Screen-->
+    <dimen name="text_size_title_id_face_of_capture">@dimen/sp_14</dimen>
+    <dimen name="text_size_auto_on_off_id">@dimen/sp_12</dimen>
+
+    <!--Text size of inline message for ID-->
+    <dimen name="thickness_inline_message_border_id">@dimen/dp_2</dimen>
+
+    <!--Text size of inline message-->
+    <dimen name="text_size_inline_message_id">@dimen/sp_16</dimen>
+    <dimen name="corner_radius_inline_message_border_id">@dimen/dp_6</dimen>
+
+    <!--Use and Retake CTA config-->
+    <dimen name="width_CTA_retake_id">@dimen/dp_160</dimen>
+    <dimen name="width_CTA_use_id">@dimen/dp_160</dimen>
+    <dimen name="text_size_CTA_retake_id">@dimen/sp_14</dimen>
+    <dimen name="text_size_CTA_use_id">@dimen/sp_14</dimen>
+    <!--END ID/Passport-->
 
 </resources>

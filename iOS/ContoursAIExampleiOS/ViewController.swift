@@ -71,7 +71,7 @@ class ViewController: UIViewController,CheckCaptureDelegate{
         let configModel = ContoursModel(clientId: "<YOUR CLIENT ID>",
                                         captureType: CaptureType.both.rawValue,
                                         type: selectedDocumentType.rawValue,
-                                        capturingSide: DocumentSide.front.rawValue,
+                                        capturingSide: DocumentSide.back.rawValue,
                                         delegate: self)
         let imageVC = contoursSDK.startContour(configModel: configModel)
         let navigationController = UINavigationController(rootViewController: imageVC)
