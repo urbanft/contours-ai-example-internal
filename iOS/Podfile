@@ -7,7 +7,7 @@ target 'ContoursAIExampleiOS' do
 
   # Pods for ContoursAIExampleiOS
 
-pod 'ContoursAISDK' , '~> 1.11.1'
+pod 'ContoursAISDK' , '~> 1.13.0'
 
 
 end
