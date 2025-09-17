@@ -88,4 +88,25 @@
     <dimen name="text_size_CTA_use_id">@dimen/sp_14</dimen>
     <!--END ID/Passport-->
 
+    <!--Here, We are setting percentage of round corners of CTA buttons, 0 means no radius on corners, 100 means round-->
+    <integer name="contours_corner_percentage">30</integer>
+    <integer name="contours_check_corner_percentage_begin_CTA">@integer/contours_corner_percentage</integer>
+    <integer name="contours_check_corner_percentage_retake_CTA">@integer/contours_corner_percentage</integer>
+    <integer name="contours_check_corner_percentage_adjust_CTA">@integer/contours_corner_percentage</integer>
+    <integer name="contours_check_corner_percentage_use_CTA">@integer/contours_corner_percentage</integer>
+    <integer name="contours_check_corner_percentage_continue_CTA">@integer/contours_corner_percentage</integer>
+    <integer name="contours_check_corner_percentage_got_it_CTA">@integer/contours_corner_percentage</integer>
+    <integer name="contours_check_corner_percentage_got_it_error_screen_CTA">@integer/contours_corner_percentage</integer>
+    <integer name="contours_check_corner_percentage_dialog_CTA">@integer/contours_corner_percentage</integer>
+    <integer name="contours_check_corner_percentage_title_bg">@integer/contours_corner_percentage</integer>
+    <integer name="contours_check_corner_percentage_hint_bg">@integer/contours_corner_percentage</integer>
+
+    <!--ID/Password percentage round corner-->
+    <integer name="contours_id_corner_percentage_title_bg">@integer/contours_corner_percentage</integer>
+    <integer name="contours_id_corner_percentage_hint_bg">@integer/contours_corner_percentage</integer>
+    <integer name="contours_id_corner_percentage_retake_CTA">@integer/contours_corner_percentage</integer>
+    <integer name="contours_id_corner_percentage_use_CTA">@integer/contours_corner_percentage</integer>
+    <integer name="contours_id_corner_percentage_dialog_CTA">@integer/contours_corner_percentage</integer>
+    <!--END-->
+
 </resources>

@@ -1,10 +1,11 @@
 /*
-Localizable.strings
-ContoursAI_SDK
-
-Created by UrbanFT on 22/09/22.
-
-*/
+ Localizable.strings
+ ContoursAI_SDK
+ 
+ Created by UrbanFT on 22/09/22.
+ 
+ */
+// MARK: - Localizable
 //UI Component String Value
 "contoursTipsHeading" = "Tips for capturing clear images:";
 "contoursTipsBodyPoint1" = "Ensure the entire check is clear and visible";
@@ -49,7 +50,7 @@ Created by UrbanFT on 22/09/22.
 "contoursManualAlertDialogDesc" = "Try manual capture instead to take a picture of your check faster.";
 "contoursManualAlertDialogButton" = "Try Manual Capture";
 "contoursPositionCheckWithinTheFrame" = "Position check within the frame";
-"contoursEnsureAllFourCorner" = "Please ensure that all four corners of the check are inside the frame and use a contrasting background.";
+"contoursPositionCheckWithinTheFrameDesc" = "Please ensure that all four corners of the check are inside the frame and use a contrasting background."; // contoursPositionCheckWithinTheFrameDesc
 "contoursError" = "Error";
 //Loading Screen
 "contoursLoadingProgressMessage" = "Loading... Hang tight.";
@@ -65,12 +66,12 @@ Created by UrbanFT on 22/09/22.
 // ID
 "contoursFlipIDOver" = "Flip the ID over";
 "contoursIDCaptureSuccessful" = "ID capture successful";
-"contoursIDCaptureTitleFront" = " Front of ID ";
+"contoursIDCaptureTitleFront" = "Front of ID";
 "contoursIDCaptureTitleBack" = "Back of ID ";
 "contoursFlipIDOverDesc" = "You are trying to capture wrong face of the ID. Please flip the ID over.";
 "contoursManualAlertIDDialogDesc" = "Try manual capture instead to take a picture of your ID faster.";
 "contoursPositionIDWithinTheFrame" = "Position ID within the frame";
-"contoursEnsureAllFourCornerID" = "Please ensure that all four corners of the ID are inside the frame and use a contrasting background.";
+"contoursPositionIDWithinTheFrameDesc" = "Please ensure that all four corners of the ID are inside the frame and use a contrasting background."; 
 "contoursIDCameraAccessDeniedDesc" = "To capture an ID image with this app, you first need to allow camera access from settings.";
 "contoursMoveIDCloser" = "Move camera closer to the ID";
 "contoursRotateID" = "Rotate the ID to correct position";
@@ -83,8 +84,28 @@ Created by UrbanFT on 22/09/22.
 "contoursPassportCaptureTitleFront" = "Passport ";
 "contoursPassportManualAlertDialogDesc" = "Try manual capture instead to take a picture of your passport faster.";
 "contoursPassportPositionWithinTheFrame" = "Position passport within the frame";
-"contoursPassportEnsureAllFourCorner" = "Please ensure that all four corners of the passport are inside the frame and use a contrasting background.";
+"contoursPassportPositionWithinTheFrameDesc" = "Please ensure that all four corners of the passport are inside the frame and use a contrasting background."; // 
 "contoursPassportMoveCloser" = "Move camera closer to the passport";
-"contoursPassportRotate" = "Rotate the Passport to correct position";
+"contoursPassportRotate" = "Rotate the passport to correct position";
 "contoursPassportCameraAccessDeniedDesc" = "To capture a passport image with this app, you first need to allow camera access from settings.";
-"contoursInvertPassport" = "Invert the passport"; 
+"contoursInvertPassport" = "Invert the passport";
+
+// MARK: - Accessibility
+
+"contoursCloseButtonAccessibility" = "Close";
+"contoursCheckBoxSelectedAccessibility" = "Check box";
+"contoursCheckBoxUnSelectedAccessibility" = "Check box";
+"contourFlashONButtonAccessibility" = "Flash, button, ON";
+"contourFlashOffButtonAccessibility" = "Flash, button, OFF";
+"contourCaptureButtonAccessibility" = "Capture";
+"contourInfoButtonAccessibility" = "Info";
+"contoursContinueCTAAccessibility" = "continue";
+"contoursPoint1Accessibility" = "Point 1";
+"contoursPoint2Accessibility" = "Point 2";
+"contoursIDCaptureTitleFrontAccessibility" = "Front of I D";
+"contoursIDCaptureTitleBackAccessibility" = "Back of I D";
+"contoursAutoCaptureONAccessbility" = "Auto Capture, toggle button, ON";
+"contoursAutoCaptureOFFAccessbility" = "Auto Capture, toggle button, OFF";
+"contourHelpButtonAccessibility" = "help";
+
+

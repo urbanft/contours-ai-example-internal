@@ -5,7 +5,7 @@
     <color name="color_contours_text">@color/color_white</color>
     <color name="color_contours_CTA_primary_background">@color/contours_blue</color>
     <color name="color_contours_CTA_secondary_background">@color/color_white</color>
-    <color name="color_contours_background">#252525</color>
+    <color name="color_contours_background">@color/color_252525</color>
     <!--END-->
 
     <!--Loading UI-->
@@ -54,7 +54,7 @@
     <!--Capture screen config-->
     <color name="color_check_capture_background">@color/color_contours_background</color>
     <color name="color_title_check_face_of_capture">@color/color_white</color>
-    <color name="color_text_auto_on_off">@color/color_contours_CTA_secondary_background</color>
+    <color name="color_text_auto_on_off">@color/color_white</color>
     <color name="color_background_title_check_face">@color/color_cc2a2a2a</color>
     <color name="color_background_auto_on_off">@color/color_cc2a2a2a</color>
     <color name="color_switch_thumb_active">@color/color_contours_CTA_primary_background</color>
@@ -106,7 +106,7 @@
     <!--ID/Passport config-->
     <!--Capture screen config-->
     <color name="color_background_auto_on_off_id">@color/color_cc2a2a2a</color>
-    <color name="color_text_auto_on_off_id">@color/color_contours_CTA_secondary_background</color>
+    <color name="color_text_auto_on_off_id">@color/color_white</color>
     <color name="color_title_id_face">@color/color_white</color>
     <color name="color_background_title_id_face">@color/color_cc2a2a2a</color>
     <color name="color_switch_thumb_active_id">@color/color_contours_CTA_primary_background</color>
@@ -148,5 +148,9 @@
     <color name="color_contours_overlay_box_id">#FFFFFFFF</color>
     <color name="color_contours_overlay_background_id">#99000000</color>
     <!--END ID/Passport-->
+
+    <!--Gradient color-->
+    <color name="color_contours_gradient">#252525</color>
+    <!--END-->
 
 </resources>

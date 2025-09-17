@@ -75,4 +75,8 @@
     <bool name="contours_id_success_icon_visibility">true</bool>
     <!--END ID/Passport-->
 
+    <!--Gradient Setting-->
+    <bool name="contours_gradient_visibility">false</bool>
+    <!--END ID/Passport-->
+
 </resources>
