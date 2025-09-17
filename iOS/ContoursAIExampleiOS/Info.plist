@@ -22,6 +22,6 @@
 		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Check capturing</string>
+	<string>Document capturing</string>
 </dict>
 </plist>
