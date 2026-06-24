@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.urbanft.rcsdk" version="1.1.2" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Example</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <allow-navigation href="http://localhost/*" />
+    <allow-navigation href="https://localhost/*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <platform name="ios">
+        <config-file parent="NSCameraUsageDescription" target="*-Info.plist">
+            <string>Camera access is required to scan checks, IDs, and passports.</string>
+        </config-file>
+        <preference name="deployment-target" value="13.0" />
+        <resource-file src="resources/contoursAI.license" target="contoursAI.license" />
+    </platform>
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.CAMERA" />
+        </config-file>
+        <preference name="Hostname" value="localhost" />
+        <preference name="Scheme" value="http" />
+        <resource-file src="resources/contoursAI.license" target="app/src/main/assets/contoursAI.license" />
+    </platform>
+</widget>

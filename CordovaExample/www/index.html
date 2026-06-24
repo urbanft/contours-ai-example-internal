@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: ionic: http://localhost https://localhost https://ssl.gstatic.com 'unsafe-eval'; connect-src * data: blob:; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content: file: ionic: http://localhost https://localhost;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Document Scanner</title>
+    </head>
+    <body>
+        <main class="screen">
+            <section class="hero-card">
+                <p class="eyebrow">Identity Verification</p>
+                <p id="version-meta" class="version-meta">Cordova Example App</p>
+                <h1 id="screen-title">Check Scan</h1>
+                <p id="screen-description" class="description">
+                    Capture the front or back side of the check.
+                </p>
+
+                <p id="sdk-status" class="status-message" aria-live="polite">
+                    Preparing scanner...
+                </p>
+
+                <section id="image-preview-section" class="image-preview-section" aria-label="Captured previews">
+                    <button class="preview-tile" id="front-preview-tile" type="button" data-side-index="0" disabled>
+                        <p id="front-preview-label">Front Check</p>
+                        <div class="preview-image-wrap">
+                            <img id="front-preview-image" alt="Front preview">
+                            <span id="front-preview-empty" class="preview-empty">Front preview</span>
+                        </div>
+                    </button>
+
+                    <button class="preview-tile" id="back-preview-tile" type="button" data-side-index="1" disabled>
+                         <p id="back-preview-label">Back Check</p>
+                        <div class="preview-image-wrap">
+                            <img id="back-preview-image" alt="Back preview">
+                            <span id="back-preview-empty" class="preview-empty">Back preview</span>
+                        </div>
+                    </button>
+                </section>
+            </section>
+        </main>
+
+        <nav class="bottom-tabs" aria-label="Document type">
+            <button class="tab-button active" type="button" data-document="check" aria-selected="true">
+                Check
+            </button>
+            <button class="tab-button" type="button" data-document="id" aria-selected="false">
+                ID
+            </button>
+            <button class="tab-button" type="button" data-document="passport" aria-selected="false">
+                Passport
+            </button>
+            <button class="tab-button" type="button" data-document="selfie" aria-selected="false">
+                Selfie
+            </button>
+        </nav>
+
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
