@@ -12,15 +12,10 @@
     <body>
         <main class="screen">
             <section class="hero-card">
-                <p class="eyebrow">Identity Verification</p>
+                <p id="top-title" class="eyebrow">Check Scan</p>
                 <p id="version-meta" class="version-meta">Cordova Example App</p>
-                <h1 id="screen-title">Check Scan</h1>
                 <p id="screen-description" class="description">
                     Capture the front or back side of the check.
-                </p>
-
-                <p id="sdk-status" class="status-message" aria-live="polite">
-                    Preparing scanner...
                 </p>
 
                 <section id="image-preview-section" class="image-preview-section" aria-label="Captured previews">
@@ -59,6 +54,8 @@
         </nav>
 
         <script src="cordova.js"></script>
+        <script src="js/ui.js"></script>
+        <script src="js/sdk.js"></script>
         <script src="js/index.js"></script>
     </body>
 </html>

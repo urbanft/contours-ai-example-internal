@@ -1,68 +1,50 @@
-var statusLabel = document.getElementById('sdk-status');
-var screenTitle = document.getElementById('screen-title');
-var screenDescription = document.getElementById('screen-description');
-var previewButtons = Array.prototype.slice.call(document.querySelectorAll('.preview-tile'));
-var tabButtons = Array.prototype.slice.call(document.querySelectorAll('.tab-button'));
-var previewSection = document.getElementById('image-preview-section');
-var frontPreviewTile = document.getElementById('front-preview-tile');
-var backPreviewTile = document.getElementById('back-preview-tile');
-var frontPreviewImage = document.getElementById('front-preview-image');
-var backPreviewImage = document.getElementById('back-preview-image');
-var frontPreviewLabel = document.getElementById('front-preview-label');
-var backPreviewLabel = document.getElementById('back-preview-label');
-var versionMetaLabel = document.getElementById('version-meta');
-
-var contourConfig = {
-    clientId: 'cyclops',
-    captureType: 'both',
-    enableMultipleCapturing: false,
-    environmentType: 'dev'
-};
-
-var documents = {
+var uiDocuments = {
     check: {
         title: 'Check Scan',
         description: 'Capture the front or back side of the check.',
-        sdkType: 'check',
         frontLabel: 'Front Check',
         backLabel: 'Back Check',
         sides: [
-            { sdkSide: 'front', documentSide: 'front', label: 'Scan Front' },
-            { sdkSide: 'back', documentSide: 'back', label: 'Scan Back' }
+            { label: 'Scan Front' },
+            { label: 'Scan Back' }
         ]
     },
     id: {
         title: 'ID Scan',
         description: 'Capture the front and back side of the ID.',
-        sdkType: 'id',
         frontLabel: 'Front ID',
         backLabel: 'Back ID',
         sides: [
-            { sdkSide: 'front', documentSide: 'front', label: 'Scan Front' },
-            { sdkSide: 'back', documentSide: 'back', label: 'Scan Back' }
+            { label: 'Scan Front' },
+            { label: 'Scan Back' }
         ]
     },
     passport: {
         title: 'Passport Scan',
         description: 'Capture the passport front face only.',
-        sdkType: 'passport',
         frontLabel: 'Passport Front Face',
-        backLabel: '',
         sides: [
-            { sdkSide: 'frontFaceOnly', documentSide: 'front', label: 'Scan Front Face' }
+            { label: 'Scan Front Face' }
         ]
     },
     selfie: {
-        title: 'Take Selfie',
+        title: 'Selfie Scan',
         description: 'Capture your selfie',
-        sdkType: 'selfie',
         frontLabel: 'User Selfie',
-        backLabel: '',
         sides: [
-            { sdkSide: 'selfie', documentSide: 'front', label: 'Capture Face' }
+            { label: 'Capture Face' }
         ]
     }
 };
+
+var ui = window.CordovaExampleUi.create({
+    documents: uiDocuments,
+    onDocumentChange: setActiveDocument,
+    onPreviewSelect: openScan
+});
+
+var sdk = window.CordovaExampleSdk.create();
+var sdkDocuments = sdk.getDocuments();
 
 var activeDocument = 'check';
 var activeScan = null;
@@ -70,201 +52,73 @@ var isDeviceReady = false;
 var previewState = {
     check: {},
     id: {},
-    passport: {}, 
+    passport: {},
     selfie: {}
 };
 
 document.addEventListener('deviceready', onDeviceReady, false);
 
-tabButtons.forEach(function (button) {
-    button.addEventListener('click', function () {
-        setActiveDocument(button.dataset.document);
-    });
-});
-
-previewButtons.forEach(function (button) {
-    button.addEventListener('click', function () {
-        openScan(button.dataset.sideIndex);
-    });
-});
-
-renderDocumentScreen();
-
 function onDeviceReady() {
     isDeviceReady = true;
-    setPreviewButtonsDisabled(false);
-    setStatus('Ready to scan check.');
-    renderVersionMeta();
-    initializeContourSdk();
+    ui.setPreviewButtonsDisabled(false);
+    ui.renderVersionMeta();
+    sdk.initialize();
 
     if (window.cordova) {
         console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     }
 }
 
-function renderVersionMeta() {
-    versionMetaLabel.textContent = 'Cordova Example App';
-}
-
-function initializeContourSdk() {
-    if (!window.ContourAISDK || typeof window.ContourAISDK.initialize !== 'function') {
-        console.warn('ContourAISDK initialize action is not available.');
-        return;
-    }
-
-    window.ContourAISDK.initialize(
-        contourConfig.clientId,
-        contourConfig.environmentType,
-        function (message) {
-            console.log(message || 'Contour SDK initialization started.');
-        }
-    );
-}
-
 function setActiveDocument(documentKey) {
-    if (!documents[documentKey]) {
+    if (!uiDocuments[documentKey] || !sdkDocuments[documentKey]) {
         return;
     }
 
     activeDocument = documentKey;
     activeScan = null;
-    renderDocumentScreen();
-    setStatus(isDeviceReady ? 'Ready to scan ' + getActiveDocumentName() + '.' : 'Preparing scanner...');
-}
-
-function renderDocumentScreen() {
-    var config = documents[activeDocument];
-    screenTitle.textContent = config.title;
-    screenDescription.textContent = config.description;
-    frontPreviewLabel.textContent = config.frontLabel;
-    backPreviewLabel.textContent = config.backLabel;
-    backPreviewTile.hidden = config.sides.length === 1;
-    previewSection.classList.toggle('selfie-preview', activeDocument === 'selfie');
-
-    previewButtons.forEach(function (button, index) {
-        var side = config.sides[index];
-        if (!side) {
-            button.hidden = true;
-            button.disabled = true;
-            return;
-        }
-
-        button.hidden = false;
-        button.dataset.sideIndex = String(index);
-        button.disabled = !isDeviceReady;
-    });
-
-    tabButtons.forEach(function (button) {
-        var isActive = button.dataset.document === activeDocument;
-        button.classList.toggle('active', isActive);
-        button.setAttribute('aria-selected', String(isActive));
-    });
-
-    renderPreviewState();
+    ui.renderDocumentScreen(activeDocument, isDeviceReady, previewState);
 }
 
 function openScan(sideIndex) {
-    var config = documents[activeDocument];
-    var side = config.sides[Number(sideIndex)];
-    if (!side) {
+    var uiConfig = uiDocuments[activeDocument];
+    var sdkConfig = sdkDocuments[activeDocument];
+    var uiSide = uiConfig.sides[Number(sideIndex)];
+    var sdkSide = sdkConfig.sides[Number(sideIndex)];
+
+    if (!uiSide || !sdkSide) {
         return;
     }
 
     activeScan = {
         documentKey: activeDocument,
-        scanType: config.sdkType,
-        sdkSide: side.sdkSide,
-        documentSide: side.documentSide
+        documentType: sdkConfig.documentType,
+        captureSide: sdkSide.captureSide || 'front'
     };
 
-    setPreviewButtonsDisabled(true);
-    setStatus('Opening ' + side.label.replace('Scan ', '').toLowerCase() + '...');
+    ui.setPreviewButtonsDisabled(true);
 
-    if (window.cordova && cordova.exec) {
-        registerContourCallbacks();
-        var scanArgs = [
-            contourConfig.clientId,
-            contourConfig.captureType,
-            config.sdkType,
-            side.sdkSide,
-            contourConfig.enableMultipleCapturing,
-            contourConfig.environmentType,
-            config.sdkType,
-            side.documentSide
-        ];
-
-        launchContourSdk(config, side, scanArgs);
-        return;
-    }
-
-    onSdkOpenError('ContourAISDK is not available yet. Install the local plugin to open the SDK.');
-}
-
-function launchContourSdk(config, side, scanArgs) {
-    if (cordova.platformId === 'android' && window.ContourAISDK && typeof window.ContourAISDK.startContour === 'function') {
-        window.ContourAISDK.startContour(
-            contourConfig.clientId,
-            contourConfig.captureType,
-            config.sdkType,
-            side.sdkSide,
-            contourConfig.enableMultipleCapturing,
-            contourConfig.environmentType,
-            onSdkOpenSuccess,
-            onSdkOpenError
-        );
-        return;
-    }
-
-    cordova.exec(
-        onSdkOpenSuccess,
-        onSdkOpenError,
-        'ContourAISDK',
-        'startContour',
-        [scanArgs]
+    sdk.registerCallbacks(
+        function () {
+            ui.setPreviewButtonsDisabled(false);
+        },
+        function () {}
     );
+
+    sdk.openScan(activeScan, onSdkOpenSuccess, onSdkOpenError);
 }
 
 function onSdkOpenSuccess(message) {
-    setPreviewButtonsDisabled(false);
+    ui.setPreviewButtonsDisabled(false);
+
     var result = normalizeResult(message);
     if (result) {
         updateImagePreviews(result);
-        setStatus(formatCaptureResult(result));
-        return;
     }
-
-    setStatus(message || 'Scan SDK opened.');
 }
 
 function onSdkOpenError(error) {
-    setPreviewButtonsDisabled(false);
-    setStatus(typeof error === 'string' ? error : 'Unable to open the scan SDK.');
+    ui.setPreviewButtonsDisabled(false);
     console.error('Scan error:', error);
-}
-
-function registerContourCallbacks() {
-    cordova.exec(
-        function () {
-            if (!hasActivePreviewImage()) {
-                setStatus(getActiveDocumentName() + ' scan closed.');
-            }
-            setPreviewButtonsDisabled(false);
-        },
-        null,
-        'ContourAISDK',
-        'onClose',
-        []
-    );
-
-    cordova.exec(
-        function () {
-            setStatus('Contour SDK event received.');
-        },
-        null,
-        'ContourAISDK',
-        'eventCallBack',
-        []
-    );
 }
 
 function normalizeResult(message) {
@@ -287,31 +141,11 @@ function normalizeResult(message) {
     return null;
 }
 
-function formatCaptureResult(result) {
-    if (!result || typeof result !== 'object') {
-        return 'Scan completed.';
-    }
-
-    if (getPreviewCandidate(result, 'front') && getPreviewCandidate(result, 'back')) {
-        return getActiveDocumentName() + ' front and back scan completed.';
-    }
-
-    if (getPreviewCandidate(result, 'back')) {
-        return getActiveDocumentName() + ' back scan completed.';
-    }
-
-    if (getPreviewCandidate(result, 'front')) {
-        return getSideLabel(activeScan && activeScan.sdkSide) + ' completed.';
-    }
-
-    return 'Scan completed.';
-}
-
 function updateImagePreviews(result) {
     console.log('Contour capture result:', result);
 
     var currentDocument = activeScan ? activeScan.documentKey : activeDocument;
-    var currentSide = activeScan ? activeScan.documentSide : 'front';
+    var currentSide = activeScan ? activeScan.captureSide : 'front';
     var frontImageValue = getPreviewCandidateValue(result, 'front');
     var backImageValue = getPreviewCandidateValue(result, 'back');
     var state = previewState[currentDocument];
@@ -335,36 +169,17 @@ function updateImagePreviews(result) {
             resolveImageSource(getPreviewCandidateValue(result, currentSide)).then(function (sideImage) {
                 if (sideImage) {
                     state[currentSide] = sideImage;
-                    renderPreviewState();
+                    ui.renderDocumentScreen(activeDocument, isDeviceReady, previewState);
                     return;
                 }
 
-                renderPreviewState();
-                if (!hasActivePreviewImage()) {
-                    setStatus('Capture result received, but no preview image was returned.');
-                }
+                ui.renderDocumentScreen(activeDocument, isDeviceReady, previewState);
             });
             return;
         }
 
-        renderPreviewState();
-
-        if (!hasActivePreviewImage()) {
-            setStatus('Capture result received, but no preview image was returned.');
-        }
+        ui.renderDocumentScreen(activeDocument, isDeviceReady, previewState);
     });
-}
-
-function renderPreviewState() {
-    var state = previewState[activeDocument] || {};
-    setPreviewImage(frontPreviewImage, state.front || '');
-    setPreviewImage(backPreviewImage, state.back || '');
-    previewSection.hidden = false;
-}
-
-function setPreviewImage(imageElement, source) {
-    imageElement.src = source;
-    imageElement.parentElement.classList.toggle('has-image', Boolean(source));
 }
 
 function getPreviewCandidate(result, side) {
@@ -372,18 +187,7 @@ function getPreviewCandidate(result, side) {
 }
 
 function getPreviewCandidateValue(result, side) {
-    if (side === 'back') {
-        return (
-            result.rearCroppedUri ||
-            result.rearUri
-        );
-    }
-
-    return (
-        result.selfieUri ||
-        result.frontCroppedUri ||
-        result.frontUri
-    );
+    return sdk.getPreviewImageValue(result, side);
 }
 
 function resolveImageSource(value) {
@@ -453,36 +257,4 @@ function readLocalImageAsDataUrl(value) {
     });
 }
 
-function hasActivePreviewImage() {
-    var state = previewState[activeDocument] || {};
-    return Boolean(state.front || state.back);
-}
-
-function setPreviewButtonsDisabled(disabled) {
-    previewButtons.forEach(function (button) {
-        if (!button.hidden) {
-            button.disabled = disabled;
-        }
-    });
-}
-
-function getActiveDocumentName() {
-    if (activeDocument === 'id') {
-        return 'ID';
-    }
-
-    return activeDocument.charAt(0).toUpperCase() + activeDocument.slice(1);
-}
-
-function getSideLabel(side) {
-    var config = documents[activeDocument];
-    var sideConfig = config.sides.filter(function (item) {
-        return item.sdkSide === side;
-    })[0];
-
-    return sideConfig ? sideConfig.label.replace('Scan ', '') : 'Scan';
-}
-
-function setStatus(message) {
-    statusLabel.textContent = message;
-}
+ui.renderDocumentScreen(activeDocument, isDeviceReady, previewState);
