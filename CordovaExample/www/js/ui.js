@@ -12,6 +12,8 @@
         var backPreviewTile = document.getElementById('back-preview-tile');
         var frontPreviewImage = document.getElementById('front-preview-image');
         var backPreviewImage = document.getElementById('back-preview-image');
+        var frontPreviewEmpty = document.getElementById('front-preview-empty');
+        var backPreviewEmpty = document.getElementById('back-preview-empty');
         var frontPreviewLabel = document.getElementById('front-preview-label');
         var backPreviewLabel = document.getElementById('back-preview-label');
         var versionMetaLabel = document.getElementById('version-meta');
@@ -39,6 +41,8 @@
             screenDescription.textContent = config.description;
             frontPreviewLabel.textContent = config.frontLabel;
             backPreviewLabel.textContent = config.backLabel || '';
+            frontPreviewEmpty.textContent = activeDocument === 'selfie' ? 'Selfie preview' : 'Front preview';
+            backPreviewEmpty.textContent = 'Back preview';
             backPreviewTile.hidden = config.sides.length === 1;
             previewSection.classList.toggle('selfie-preview', activeDocument === 'selfie');
 

@@ -71,11 +71,10 @@ select {
 
 .eyebrow {
     margin: 0;
-    color: var(--accent);
+    color: #000000;
     font-size: 28px;
     font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+    letter-spacing: normal;
 }
 
 .version-meta {
@@ -98,14 +97,6 @@ select {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
-}
-
-.image-preview-section.selfie-preview {
-    grid-template-columns: minmax(0, 180px);
-}
-
-.image-preview-section.selfie-preview .preview-image-wrap {
-    aspect-ratio: 1;
 }
 
 .preview-tile {
@@ -165,7 +156,7 @@ select {
 }
 
 .preview-tile p {
-    margin: 8px 0 0;
+    margin: 0 0 8px;
     color: var(--text-strong);
     font-size: 13px;
     font-weight: 700;
