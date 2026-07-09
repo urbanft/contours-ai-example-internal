@@ -27,7 +27,7 @@ body {
     isolation: isolate;
     margin: 0;
     min-height: 100vh;
-    padding: env(safe-area-inset-top, 0) env(safe-area-inset-right, 0) calc(96px + env(safe-area-inset-bottom, 0)) env(safe-area-inset-left, 0);
+    padding: 0 env(safe-area-inset-right, 0) calc(96px + env(safe-area-inset-bottom, 0)) env(safe-area-inset-left, 0);
     font-family: "Avenir Next", "Segoe UI", sans-serif;
     background: var(--bg-bottom);
     color: var(--text-strong);
@@ -54,9 +54,13 @@ select {
 .screen {
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px 24px 24px;
+}
+
+body.platform-ios .screen {
+    padding-top: calc(env(safe-area-inset-top, 0px) + 10px);
 }
 
 .hero-card {
@@ -100,11 +104,19 @@ select {
 }
 
 .preview-tile {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     margin: 0;
     padding: 0;
     border: 0;
     background: transparent;
     text-align: left;
+}
+
+.preview-tile[hidden] {
+    display: none !important;
 }
 
 .preview-tile:disabled {
@@ -113,6 +125,9 @@ select {
 
 .preview-image-wrap {
     position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     aspect-ratio: 1.58;
     border: 1px solid rgba(24, 54, 66, 0.14);
     border-radius: 12px;
@@ -196,19 +211,38 @@ select {
     color: #ffffff;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 390px) {
+    .image-preview-section {
+        margin-top: 28px;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .image-preview-section.selfie-preview {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 600px) {
     body {
         padding-bottom: calc(128px + env(safe-area-inset-bottom, 0));
     }
 
     .screen {
         align-items: flex-start;
-        padding: 48px;
+        justify-content: flex-start;
+        padding: 10px 48px 48px;
+    }
+
+    body.platform-ios .screen {
+        padding-top: calc(env(safe-area-inset-top, 0px) + 10px);
     }
 
     .hero-card {
-        width: min(100%, 720px);
+        width: min(100%, 640px);
         min-height: calc(100vh - 220px);
+        margin-left: auto;
+        margin-right: auto;
         padding: 40px 32px 32px;
         border-radius: 32px;
     }
@@ -227,23 +261,13 @@ select {
         font-size: 28px;
     }
 
-    .image-preview-section {
-        margin-top: 28px;
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .image-preview-section.selfie-preview {
-        grid-template-columns: 1fr;
-    }
-
     .preview-image-wrap {
         min-height: 320px;
         border-radius: 18px;
     }
 
     .bottom-tabs {
-        width: min(100%, 720px);
+        width: min(calc(100% - 32px), 640px);
         padding: 12px;
         border-radius: 24px;
     }
@@ -252,12 +276,20 @@ select {
         min-height: 64px;
         font-size: 24px;
     }
+
+    body.platform-android .screen {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 420px) {
     .screen {
         align-items: flex-start;
-        padding: 16px;
+        padding: 10px 16px 16px;
+    }
+
+    body.platform-ios .screen {
+        padding-top: calc(env(safe-area-inset-top, 0px) + 10px);
     }
 
     .hero-card {
@@ -265,12 +297,7 @@ select {
         border-radius: 24px;
     }
 
-    h1 {
-        font-size: 30px;
-    }
-
     .image-preview-section {
         grid-template-columns: 1fr;
     }
-
 }

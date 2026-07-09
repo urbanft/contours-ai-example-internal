@@ -57,15 +57,42 @@ var previewState = {
 };
 
 document.addEventListener('deviceready', onDeviceReady, false);
+document.addEventListener('resume', onAppResume, false);
+document.addEventListener('visibilitychange', onVisibilityChange, false);
 
 function onDeviceReady() {
     isDeviceReady = true;
+    applyPlatformClass();
     ui.setPreviewButtonsDisabled(false);
     ui.renderVersionMeta();
     sdk.initialize();
 
     if (window.cordova) {
         console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
+    }
+}
+
+function applyPlatformClass() {
+    if (!window.cordova || !cordova.platformId || !document.body) {
+        return;
+    }
+
+    document.body.classList.add('platform-' + cordova.platformId);
+}
+
+function onAppResume() {
+    enablePreviewButtons();
+}
+
+function onVisibilityChange() {
+    if (!document.hidden) {
+        enablePreviewButtons();
+    }
+}
+
+function enablePreviewButtons() {
+    if (isDeviceReady) {
+        ui.setPreviewButtonsDisabled(false);
     }
 }
 
@@ -77,6 +104,19 @@ function setActiveDocument(documentKey) {
     activeDocument = documentKey;
     activeScan = null;
     ui.renderDocumentScreen(activeDocument, isDeviceReady, previewState);
+    resetScrollPosition();
+}
+
+function resetScrollPosition() {
+    window.scrollTo(0, 0);
+
+    if (document.body) {
+        document.body.scrollTop = 0;
+    }
+
+    if (document.documentElement) {
+        document.documentElement.scrollTop = 0;
+    }
 }
 
 function openScan(sideIndex) {
@@ -99,7 +139,7 @@ function openScan(sideIndex) {
 
     sdk.registerCallbacks(
         function () {
-            ui.setPreviewButtonsDisabled(false);
+            enablePreviewButtons();
         },
         function () {}
     );
@@ -108,7 +148,7 @@ function openScan(sideIndex) {
 }
 
 function onSdkOpenSuccess(message) {
-    ui.setPreviewButtonsDisabled(false);
+    enablePreviewButtons();
 
     var result = normalizeResult(message);
     if (result) {
@@ -117,7 +157,7 @@ function onSdkOpenSuccess(message) {
 }
 
 function onSdkOpenError(error) {
-    ui.setPreviewButtonsDisabled(false);
+    enablePreviewButtons();
     console.error('Scan error:', error);
 }
 

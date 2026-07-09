@@ -1,6 +1,6 @@
 (function () {
     var contourConfig = {
-        clientId: '<CLIENT_ID>',
+        clientId: 'cyclops',
         captureType: 'both',
         enableMultipleCapturing: false
     };
@@ -44,14 +44,14 @@
             }
 
             if (side === 'back') {
-                return result.rearUri || result.rearCroppedUri;
+                return result.rearCroppedUri;
             }
 
             if (result.selfieUri) {
                 return result.selfieUri;
             }
 
-            return result.frontUri || result.frontCroppedUri;
+            return result.frontCroppedUri;
         }
 
         function initialize(onReady) {
@@ -85,6 +85,7 @@
                 scanType,
                 captureSide,
                 contourConfig.enableMultipleCapturing,
+                "dev",
                 onSuccess,
                 onError
             );
