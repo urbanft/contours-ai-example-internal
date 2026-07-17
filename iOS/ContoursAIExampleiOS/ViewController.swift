@@ -8,163 +8,110 @@
 import UIKit
 import ContoursAI_SDK
 
-
-class ViewController: UIViewController,CheckCaptureDelegate{
-    
-    @IBOutlet var frontImageView : UIImageView!
-    @IBOutlet var backImageView : UIImageView!
-    @IBOutlet var frontImagebutton : UIButton!
-    @IBOutlet var backImagebutton : UIButton!
-    @IBOutlet weak var buttonCheckScan: TabButton!{
-        didSet {
-            buttonCheckScan.isSelected = true
-        }
-    }
-    @IBOutlet weak var buttonIdScan: TabButton!{
-        didSet {
-            buttonIdScan.isSelected = false
-        }
-    }
-    @IBOutlet weak var passport: TabButton!{
-        didSet {
-            passport.isSelected = false
-        }
-    }
-    @IBOutlet weak var selfie: TabButton!{
-        didSet {
-            selfie.isSelected = false
-        }
-    }
-    let appDelegate = UIApplication.shared.delegate as? AppDelegate
+class ViewController: UIViewController, CheckCaptureDelegate {
     let contoursSDK = ContoursAIFramework()
-    var selectedDocumentType : ScanType = .check
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.navigationController?.navigationBar.isHidden = true
+    private lazy var uiController = View(viewController: self)
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        uiController.buildInterface()
+        uiController.applyDocumentUI(for: .check, resetImages: false)
     }
-    
-  
-    // MARK: - Intrenals function
-    func openContoursSDKConcept(checkSide:Int) {
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
+    func openContoursSDKConcept(checkSide: Int) {
         ContoursAIFramework.shared.isLandscape = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             self.view.layoutSubviews()
             switch checkSide {
             case 101:
                 self.openFrontOfCheck()
             case 102:
                 self.openRearOfCheck()
-            default : break
+            default:
+                break
             }
-        })
+        }
     }
-    
-    func openFrontOfCheck(){
-        let configModel = ContoursModel(clientId: "<YOUR CLIENT ID>",
-                                        captureType: CaptureType.both.rawValue,
-                                        type: selectedDocumentType.rawValue,
-                                        capturingSide: DocumentSide.front.rawValue,
-                                        delegate: self)
-        let imageVC = contoursSDK.startContour(configModel: configModel,enableMultipleCapturing: false)
+
+    func openFrontOfCheck() {
+        let configModel = ContoursModel(
+            clientId: "<YOUR CLIENT ID>",
+            captureType: CaptureType.both.rawValue,
+            type: uiController.selectedDocumentType.rawValue,
+            capturingSide: DocumentSide.front.rawValue,
+            delegate: self
+        )
+        let imageVC = contoursSDK.startContour(configModel: configModel, enableMultipleCapturing: false)
         let navigationController = UINavigationController(rootViewController: imageVC)
         navigationController.modalPresentationStyle = .fullScreen
-        self.present(navigationController, animated: false)
+        present(navigationController, animated: false)
     }
-    
+
     func openRearOfCheck() {
-        let configModel = ContoursModel(clientId: "<YOUR CLIENT ID>",
-                                        captureType: CaptureType.both.rawValue,
-                                        type: selectedDocumentType.rawValue,
-                                        capturingSide: DocumentSide.back.rawValue,
-                                        delegate: self)
+        let configModel = ContoursModel(
+            clientId: "<YOUR CLIENT ID>",
+            captureType: CaptureType.both.rawValue,
+            type: uiController.selectedDocumentType.rawValue,
+            capturingSide: DocumentSide.back.rawValue,
+            delegate: self
+        )
         let imageVC = contoursSDK.startContour(configModel: configModel)
         let navigationController = UINavigationController(rootViewController: imageVC)
         navigationController.modalPresentationStyle = .fullScreen
-        self.present(navigationController, animated: false)
+        present(navigationController, animated: false)
     }
-    
+
     func imageCaptured(frontImageCropped: UIImage?, rearImageCropped: UIImage?, frontImage: UIImage?, rearImage: UIImage?) {
         ContoursAIFramework.shared.isLandscape = false
         if frontImage != nil {
-            frontImageView.image = frontImageCropped
+            uiController.showFrontImage(frontImageCropped)
         }
         if rearImage != nil {
-            backImageView.image = rearImageCropped
+            uiController.showBackImage(rearImageCropped)
         }
     }
-    
+
     func onContourClose() {
         ContoursAIFramework.shared.isLandscape = false
     }
-    
-    func eventCaptured(data: [String : Any]?) {
+
+    func eventCaptured(data: [String: Any]?) {
     }
-    
+
     func selfieCaptured(image: UIImage?) {
         if image != nil {
-            frontImageView.image = image
+            uiController.showFrontImage(image)
         }
     }
-    
-    // MARK: - Actions
-    
-    @IBAction func documentButtonClicked(_ sender: Any) {
-        let button =  sender as? UIButton
-        openContoursSDKConcept(checkSide: button?.tag ?? 0)  //Function to  open Contours SDK
-    }
-    
-    @IBAction func selectScanType(_ sender: UIButton) {
-        self.frontImageView.image = nil
-        self.backImageView.image = nil
-        let button =  sender
-        switch button.tag {
-        case 101:
-            selectedDocumentType = .check
-            self.frontImagebutton.isHidden = false
-            self.frontImageView.isHidden = false
-            self.backImagebutton.isHidden = false
-            self.backImageView.isHidden = false
-            buttonIdScan.isSelected = false
-            buttonCheckScan.isSelected =  true
-            passport.isSelected =  false
 
+    @objc func documentButtonClicked(_ sender: UIButton) {
+        openContoursSDKConcept(checkSide: sender.tag)
+    }
+
+    @objc func selectScanType(_ sender: UIButton) {
+        switch sender.tag {
         case 102:
-            selectedDocumentType = .id
-            buttonCheckScan.isSelected = false
-            buttonIdScan.isSelected = true
-            passport.isSelected =  false
-            selfie.isSelected =  false
-            self.frontImagebutton.isHidden = false
-            self.frontImageView.isHidden = false
-            self.backImagebutton.isHidden = false
-            self.backImageView.isHidden = false
-
+            uiController.applyDocumentUI(for: .id)
         case 103:
-            selectedDocumentType = .passport
-            buttonCheckScan.isSelected = false
-            buttonIdScan.isSelected = false
-            passport.isSelected =  true
-            selfie.isSelected =  false
-
-            self.frontImagebutton.isHidden = false
-            self.frontImageView.isHidden = false
-            self.backImagebutton.isHidden = true
-            self.backImageView.isHidden = true
+            uiController.applyDocumentUI(for: .passport)
         case 104:
-            buttonCheckScan.isSelected = false
-            buttonIdScan.isSelected = false
-            passport.isSelected =  false
-            selfie.isSelected =  true
-            selectedDocumentType = .selfie
-
-            self.frontImagebutton.isHidden = false
-            self.frontImageView.isHidden = false
-            self.backImagebutton.isHidden = true
-            self.backImageView.isHidden = true
-            
+            uiController.applyDocumentUI(for: .selfie)
         default:
-            break
+            uiController.applyDocumentUI(for: .check)
         }
-    
+    }
+
+    @objc func handleSwipe(_ gesture: UISwipeGestureRecognizer) {
+        uiController.handleSwipe(gesture)
     }
 }

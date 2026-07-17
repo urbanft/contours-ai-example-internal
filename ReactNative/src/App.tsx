@@ -1,20 +1,49 @@
-
-import React, { useEffect } from 'react';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import AppNavigation from './navigation/AppNavigation';
-import { StatusBar } from 'react-native';
-import { initialize } from 'contour-ai-sdk';
+import React, {useEffect, useMemo, useState} from 'react';
+import {Platform, SafeAreaView, StatusBar, StyleSheet} from 'react-native';
+import {initialize} from 'contour-ai-sdk';
+import ViewScreen from './view';
+import {
+  CLIENT_ID,
+  DocumentType,
+  getDocumentConfig,
+  useContourScanner,
+} from './ContourScannerManager';
 
 export default function App() {
+  const [activeDocumentType, setActiveDocumentType] =
+    useState<DocumentType>('check');
 
   useEffect(() => {
-    initialize('<CLIENT_ID>');
+    initialize(CLIENT_ID);
   }, []);
 
+  const config = useMemo(
+    () => getDocumentConfig(activeDocumentType),
+    [activeDocumentType],
+  );
+  const {getImageUri, startSDK} = useContourScanner(config);
+
   return (
-   <SafeAreaView style={{ flex: 1 }} edges={['top', 'bottom']}>
-    <StatusBar translucent backgroundColor="transparent" barStyle="dark-content" />
-      <AppNavigation />
+    <SafeAreaView style={styles.safeArea}>
+      <StatusBar
+        backgroundColor="#d8e8ef"
+        barStyle="dark-content"
+      />
+      <ViewScreen
+        activeDocumentType={activeDocumentType}
+        config={config}
+        getImageUri={getImageUri}
+        onSelectDocumentType={setActiveDocumentType}
+        onStartScan={startSDK}
+      />
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: '#d8e8ef',
+    paddingTop: Platform.OS === 'android' ? (StatusBar.currentHeight ?? 0) : 0,
+  },
+});

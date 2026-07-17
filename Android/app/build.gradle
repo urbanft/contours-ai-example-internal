@@ -14,7 +14,7 @@ android {
         pickFirst "/lib/**/libopencv_java4.so"
         pickFirst '/lib/**/libc++_shared.so'
     }
-
+    
     defaultConfig {
         applicationId "com.contoursai.android.example"
         minSdk 23
@@ -51,3 +51,4 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.github.Contour-Document-Imaging:contours-ai-android-sdk:1.18.0'
 }
+

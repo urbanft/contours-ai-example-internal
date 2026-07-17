@@ -1,11 +1,13 @@
-import 'package:contour_ai_sdk/scan-check.dart';
-import 'package:contour_ai_sdk/scan-id.dart';
-import 'package:contour_ai_sdk/scan-passport.dart';
-import 'package:contour_ai_sdk/capture-selfie.dart';
-import 'package:contouraisdk/contouraisdk.dart';
+import 'package:contour_ai_sdk/contourScannerManager.dart';
+import 'package:contour_ai_sdk/view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
   runApp(const MyApp());
 }
 
@@ -17,42 +19,17 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String frontImageUri = '';
-  String rearImageUri = '';
-
   @override
   void initState() {
     super.initState();
-    Contouraisdk.initialize("<CLIENT_ID>");
+    initializeScannerSdk();
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: DefaultTabController(
-        length: 4,
-        child: Scaffold(
-          appBar: AppBar(
-            title: const Text('Contour Demo'),
-            bottom: const TabBar(
-              tabs: [
-                Tab(text: 'Check'),
-                Tab(text: 'ID'),
-                Tab(text: 'Passport'),
-                Tab(text: 'Selfie')
-              ],
-            ),
-          ),
-          body: const TabBarView(
-            children: [
-              Center(child: ScanCheck()),
-              Center(child: ScanID()),
-              Center(child: ScanPassport()),
-              Center(child: Selfie()),
-            ],
-          ),
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      home: const DocumentScannerScreen(),
     );
   }
 }

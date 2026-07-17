@@ -12,7 +12,7 @@ import ContoursAI_SDK
 struct ContoursSDK: UIViewControllerRepresentable {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    var captureSide = DocumentSide.front.rawValue
+    var captureSide = ContoursAI_SDK.DocumentSide.front.rawValue
     var docType = ScanType.check.rawValue
 
     @Binding  var frontImage: UIImage?
@@ -61,10 +61,10 @@ struct ContoursSDK: UIViewControllerRepresentable {
          */
         func imageCaptured(frontImageCropped: UIImage?, rearImageCropped: UIImage?, frontImage: UIImage?, rearImage: UIImage?) {
             ContoursAIFramework.shared.isLandscape = false
-            if let uiImage = frontImage {
+            if let uiImage = frontImageCropped {
                 parent.frontImage = uiImage
             }
-            if let uiImage = rearImage {
+            if let uiImage = rearImageCropped {
                 parent.rearImage = uiImage
             }
         }
